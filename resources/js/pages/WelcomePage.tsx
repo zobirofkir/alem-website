@@ -1,4 +1,5 @@
 import AboutComponent from '@/components/AboutComponent';
+import PortfolioComponent from '@/components/PortfolioComponent';
 import ServiceComponent from '@/components/ServiceComponent';
 import SliderComponent from '@/components/SliderComponent'
 import React from 'react'
@@ -36,6 +37,8 @@ const WelcomePage = () => {
         <AboutComponent  />
 
         <ServiceComponent />
+
+        <PortfolioComponent />
 
         <div>
           Welcome Page
