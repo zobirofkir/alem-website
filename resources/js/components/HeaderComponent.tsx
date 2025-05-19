@@ -1,9 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  
+  const { scrollY } = useScroll();
+  
+  // Gérer l'affichage du header en fonction du défilement
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    // Ne pas cacher le header si le menu mobile est ouvert
+    if (isOpen) return;
+    
+    // Déterminer si on défile vers le haut ou vers le bas
+    const direction = latest > lastScrollY ? "down" : "up";
+    
+    // Seuil minimum de défilement avant de cacher le header (20px)
+    const shouldHide = latest > 100 && direction === "down";
+    const shouldShow = direction === "up";
+    
+    // Mettre à jour la visibilité
+    if (shouldHide !== !isVisible) setIsVisible(!shouldHide);
+    
+    // Mémoriser la position actuelle pour la prochaine comparaison
+    setLastScrollY(latest);
+  });
 
   /**
    * Vérifier la préférence système pour le mode sombre
@@ -32,39 +55,73 @@ const HeaderComponent = () => {
     { name: 'Contact', href: '#' },
   ];
 
+  // Variantes d'animation pour le header
+  const headerVariants = {
+    visible: { 
+      y: 0,
+      opacity: 1,
+      transition: { 
+        type: "spring", 
+        stiffness: 100, 
+        damping: 20 
+      }
+    },
+    hidden: { 
+      y: -100, 
+      opacity: 0,
+      transition: { 
+        type: "spring", 
+        stiffness: 100, 
+        damping: 20 
+      }
+    }
+  };
+
   return (
-    <header className={`fixed w-full z-50 transition-colors duration-300 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}`}>
+    <motion.header 
+      variants={headerVariants}
+      initial="visible"
+      animate={isVisible ? "visible" : "hidden"}
+      className={`fixed w-full z-50 transition-colors duration-300 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-800'} shadow-lg`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Nom Copper au lieu du logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <motion.div 
+            className="flex-shrink-0 flex items-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <a href="#" className="flex items-center">
               <span className={`text-xl font-bold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
                 Copper
               </span>
             </a>
-          </div>
+          </motion.div>
 
           {/* Navigation Bureau */}
           <nav className="hidden md:ml-6 md:flex md:space-x-8">
             {navLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.name}
                 href={link.href}
-                className={`inline-flex items-center px-1 pt-1 text-sm font-bold border-b-2 transition-colors duration-200  ${
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className={`inline-flex items-center px-1 pt-1 text-sm font-bold border-b-2 transition-colors duration-200 ${
                   isDarkMode 
                     ? 'border-transparent hover:border-amber-400 hover:text-amber-400' 
                     : 'border-transparent hover:border-amber-600 hover:text-amber-600'
                 }`}
               >
                 {link.name}
-              </a>
+              </motion.a>
             ))}
           </nav>
 
           {/* Bouton menu mobile */}
           <div className="flex md:hidden">
-            <button
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${
                 isDarkMode 
@@ -84,7 +141,7 @@ const HeaderComponent = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               )}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -120,9 +177,14 @@ const HeaderComponent = () => {
         )}
       </AnimatePresence>
 
-      {/* Ligne d'accent dorée */}
-      <div className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}></div>
-    </header>
+      {/* Ligne d'accent dorée avec animation */}
+      <motion.div 
+        className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      ></motion.div>
+    </motion.header>
   );
 };
 

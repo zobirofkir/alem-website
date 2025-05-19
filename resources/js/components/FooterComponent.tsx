@@ -38,13 +38,13 @@ const FooterComponent = () => {
           
           {/* Liens rapides */}
           <div className="flex space-x-6">
-            <a href="#" className={`text-sm hover:underline ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
+            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
               Mentions légales
             </a>
-            <a href="#" className={`text-sm hover:underline ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
+            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
               Politique de confidentialité
             </a>
-            <a href="#" className={`text-sm hover:underline ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
+            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
               Contact
             </a>
           </div>
