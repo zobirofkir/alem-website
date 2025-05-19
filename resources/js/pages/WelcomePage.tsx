@@ -1,3 +1,4 @@
+import AboutComponent from '@/components/AboutComponent';
 import SliderComponent from '@/components/SliderComponent'
 import React from 'react'
 
@@ -30,6 +31,8 @@ const WelcomePage = () => {
   return (
     <section>
         <SliderComponent slides={slides} />
+
+        <AboutComponent  />
 
         <div>
           Welcome Page
