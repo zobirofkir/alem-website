@@ -1,4 +1,5 @@
 import AboutComponent from '@/components/AboutComponent';
+import ServiceComponent from '@/components/ServiceComponent';
 import SliderComponent from '@/components/SliderComponent'
 import React from 'react'
 
@@ -33,6 +34,8 @@ const WelcomePage = () => {
         <SliderComponent slides={slides} />
 
         <AboutComponent  />
+
+        <ServiceComponent />
 
         <div>
           Welcome Page
