@@ -1,4 +1,5 @@
 import AboutComponent from '@/components/AboutComponent';
+import ContactComponent from '@/components/ContactComponent';
 import PortfolioComponent from '@/components/PortfolioComponent';
 import ServiceComponent from '@/components/ServiceComponent';
 import SliderComponent from '@/components/SliderComponent'
@@ -40,9 +41,8 @@ const WelcomePage = () => {
 
         <PortfolioComponent />
 
-        <div>
-          Welcome Page
-        </div>
+        <ContactComponent />
+        
     </section>
   )
 }
