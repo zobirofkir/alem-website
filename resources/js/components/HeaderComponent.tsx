@@ -6,7 +6,7 @@ const HeaderComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   /**
-   * Check system preference for dark mode
+   * Vérifier la préférence système pour le mode sombre
    */
   useEffect(() => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -14,7 +14,7 @@ const HeaderComponent = () => {
     }
 
     /**
-     * Listen for changes in system preference
+     * Écouter les changements de préférence système
      */
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       setIsDarkMode(e.matches);
@@ -22,12 +22,12 @@ const HeaderComponent = () => {
   }, []);
 
   /**
-   * Navigation links
+   * Liens de navigation
    */
   const navLinks = [
-    { name: 'Home', href: '#' },
+    { name: 'Accueil', href: '#' },
     { name: 'Services', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'À propos', href: '#' },
     { name: 'Portfolio', href: '#' },
     { name: 'Contact', href: '#' },
   ];
@@ -36,16 +36,16 @@ const HeaderComponent = () => {
     <header className={`fixed w-full z-50 transition-colors duration-300 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-800'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Nom Copper au lieu du logo */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center">
               <span className={`text-xl font-bold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
-                LOGO
+                Copper
               </span>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Navigation Bureau */}
           <nav className="hidden md:ml-6 md:flex md:space-x-8">
             {navLinks.map((link) => (
               <a
@@ -62,7 +62,7 @@ const HeaderComponent = () => {
             ))}
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Bouton menu mobile */}
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -73,8 +73,8 @@ const HeaderComponent = () => {
               } focus:outline-none`}
               aria-expanded="false"
             >
-              <span className="sr-only">Open main menu</span>
-              {/* Icon when menu is closed */}
+              <span className="sr-only">Ouvrir le menu principal</span>
+              {/* Icône quand le menu est fermé */}
               {!isOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -89,7 +89,7 @@ const HeaderComponent = () => {
         </div>
       </div>
 
-      {/* Mobile menu, show/hide based on menu state */}
+      {/* Menu mobile, afficher/cacher selon l'état du menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -120,7 +120,7 @@ const HeaderComponent = () => {
         )}
       </AnimatePresence>
 
-      {/* Gold accent line */}
+      {/* Ligne d'accent dorée */}
       <div className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}></div>
     </header>
   );
