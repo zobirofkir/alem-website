@@ -24,30 +24,14 @@ const FooterComponent = () => {
       {/* Ligne d'accent dorée */}
       <div className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo et copyright */}
           <div className="mb-4 md:mb-0">
-            <div className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
-              Copper
-            </div>
-            <p className="text-sm">
+            <p className="text-sm font-bold">
               &copy; {new Date().getFullYear()} Copper. Tous droits réservés.
             </p>
-          </div>
-          
-          {/* Liens rapides */}
-          <div className="flex space-x-6">
-            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
-              Mentions légales
-            </a>
-            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
-              Politique de confidentialité
-            </a>
-            <a href="#" className={`text-sm hover:underline font-bold ${isDarkMode ? 'hover:text-amber-400' : 'hover:text-amber-600'}`}>
-              Contact
-            </a>
-          </div>
+          </div>          
         </div>
       </div>
     </footer>
