@@ -25,9 +25,9 @@ const FooterComponent = () => {
       <div className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-center items-center">
           {/* Logo et copyright */}
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 ">
             <p className="text-sm font-bold">
               &copy; {new Date().getFullYear()} Copper. Tous droits réservés.
             </p>
