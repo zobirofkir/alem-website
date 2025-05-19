@@ -51,7 +51,7 @@ const HeaderComponent = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition-colors duration-200 ${
+                className={`inline-flex items-center px-1 pt-1 text-sm font-bold border-b-2 transition-colors duration-200  ${
                   isDarkMode 
                     ? 'border-transparent hover:border-amber-400 hover:text-amber-400' 
                     : 'border-transparent hover:border-amber-600 hover:text-amber-600'
