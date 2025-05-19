@@ -1,8 +1,15 @@
+import SliderComponent from '@/components/SliderComponent'
 import React from 'react'
 
 const WelcomePage = () => {
   return (
-    <div>WelcomePage</div>
+    <section>
+        <SliderComponent />
+
+        <div>
+          Welcome Page
+        </div>
+    </section>
   )
 }
 
