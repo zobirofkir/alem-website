@@ -19,7 +19,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            About <span className="text-amber-600">Copper</span>
+            À propos de <span className="text-amber-600">Copper</span>
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
         </motion.div>
@@ -36,7 +36,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
             <div className="aspect-square overflow-hidden rounded-2xl bg-amber-100 dark:bg-amber-900/20">
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
-                alt="Copper Portfolio"
+                alt="Portfolio Copper"
                 className="w-full h-full object-cover"
               />
               <motion.div
@@ -59,12 +59,12 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-                Crafting Digital Excellence
+                Créer l'Excellence Numérique
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Copper is a creative portfolio showcasing innovative digital solutions 
-                and cutting-edge designs. With a focus on quality and attention to detail, 
-                we transform ideas into impactful digital experiences.
+                Copper est un portfolio créatif présentant des solutions numériques innovantes 
+                et des designs à la pointe de la technologie. Avec un accent sur la qualité et l'attention 
+                aux détails, nous transformons les idées en expériences numériques percutantes.
               </p>
 
               {/* Stats with counter animation */}
@@ -77,7 +77,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
                   <span className="text-3xl font-bold text-amber-600">10+</span>
-                  <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
+                  <p className="text-gray-600 dark:text-gray-300">Années d'Expérience</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
                   <span className="text-3xl font-bold text-amber-600">200+</span>
-                  <p className="text-gray-600 dark:text-gray-300">Projects Completed</p>
+                  <p className="text-gray-600 dark:text-gray-300">Projets Réalisés</p>
                 </motion.div>
               </div>
 
@@ -97,7 +97,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
               >
-                View Portfolio
+                Voir le Portfolio
               </motion.button>
             </motion.div>
           </div>
