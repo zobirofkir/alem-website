@@ -96,7 +96,7 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1579684288361-5c1a2955d0bc?q=80&w=2070"
+                src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Prélèvement à domicile"
                 className="w-full h-full object-cover"
               />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../lib/utils';
 
@@ -43,19 +43,18 @@ const SliderComponent: React.FC<SliderProps> = ({
     return () => darkModeMediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
-  /**
-   * Auto-play functionality
-   */
+  // Auto-play functionality with useCallback for better performance
+  const nextSlide = useCallback(() => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  }, [slides.length]);
+
   useEffect(() => {
     if (!autoPlay || isPaused) return;
     
-    const timer = setInterval(() => {
-      setDirection(1);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, interval);
-    
+    const timer = setInterval(nextSlide, interval);
     return () => clearInterval(timer);
-  }, [autoPlay, interval, slides.length, isPaused]);
+  }, [autoPlay, interval, isPaused, nextSlide]);
 
   const goToPrevious = () => {
     setDirection(-1);
@@ -72,27 +71,26 @@ const SliderComponent: React.FC<SliderProps> = ({
     setCurrentIndex(index);
   };
 
-  /**
-   * Variants for animations
-   */
+  // Enhanced animation variants
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
+      scale: 1.05,
     }),
     center: {
       x: 0,
       opacity: 1,
+      scale: 1,
     },
     exit: (direction: number) => ({
       x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
+      scale: 0.95,
     }),
   };
 
-  /**
-   * Touch handling for mobile swipe
-   */
+  // Touch handling for mobile swipe
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
@@ -106,16 +104,12 @@ const SliderComponent: React.FC<SliderProps> = ({
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 50) {
-      /**
-       * Swipe left
-       */
+      // Swipe left
       goToNext();
     }
 
     if (touchStart - touchEnd < -50) {
-      /**
-       * Swipe right
-       */
+      // Swipe right
       goToPrevious();
     }
   };
@@ -127,7 +121,7 @@ const SliderComponent: React.FC<SliderProps> = ({
   return (
     <div 
       className={cn(
-        "relative w-full overflow-hidden rounded-xl transition-colors", 
+        "relative w-full overflow-hidden rounded-xl shadow-xl transition-colors", 
         isDarkMode ? "bg-gray-900" : "bg-white",
         className
       )}
@@ -137,8 +131,19 @@ const SliderComponent: React.FC<SliderProps> = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
+      {/* Progress bar */}
+      <div className="absolute top-0 left-0 right-0 z-20 h-1 bg-gray-200 dark:bg-gray-700">
+        <motion.div 
+          className="h-full bg-green-600"
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: interval / 1000, ease: "linear" }}
+          key={currentIndex}
+        />
+      </div>
+
       {/* Main slider */}
-      <div className="relative h-screen w-full">
+      <div className="relative h-[70vh] md:h-[80vh] w-full">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
@@ -149,50 +154,65 @@ const SliderComponent: React.FC<SliderProps> = ({
             exit="exit"
             transition={{
               x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.5 }
+              opacity: { duration: 0.5 },
+              scale: { duration: 0.5 }
             }}
             className="absolute inset-0 w-full h-full"
           >
             <div className="relative w-full h-full">
-              {/* Image */}
+              {/* Image with overlay */}
               <img
                 src={slides[currentIndex].image}
                 alt={slides[currentIndex].title}
                 className="object-cover w-full h-full"
               />
               
-              {/* Content overlay */}
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-t to-transparent",
-                isDarkMode 
-                  ? "from-black/80" 
-                  : "from-black/60"
-              )} />
+              {/* Content overlay with medical-themed gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-green-800/40 to-transparent" />
               
-              {/* Text content */}
-              <motion.div 
-                className="absolute bottom-0 left-0 right-0 p-4 md:p-8 text-white"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                <h2 className="text-2xl md:text-4xl font-bold mb-2 text-white">{slides[currentIndex].title}</h2>
-                <p className="text-sm md:text-base opacity-90 max-w-2xl text-gray-100">{slides[currentIndex].description}</p>
-              </motion.div>
+              {/* Text content with medical info */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
+                <motion.div 
+                  className="max-w-4xl"
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  <h2 className="text-3xl md:text-5xl font-bold mb-3 text-white">{slides[currentIndex].title}</h2>
+                  <p className="text-lg md:text-xl mb-6 text-white/90">{slides[currentIndex].description}</p>
+                  
+                  {/* Medical services badges */}
+                  <div className="flex flex-wrap gap-3 mb-6">
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm flex items-center">
+                      🔬 Innovation médicale
+                    </span>
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm flex items-center">
+                      👶 Biologie de la reproduction
+                    </span>
+                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm flex items-center">
+                      🧪 Analyses rapides & fiables
+                    </span>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors"
+                  >
+                    Prendre Rendez-vous
+                  </motion.button>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows with improved design */}
       <button
         onClick={goToPrevious}
-        className={cn(
-          "absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full backdrop-blur-sm transition-all text-white",
-          isDarkMode 
-            ? "bg-white/10 hover:bg-white/20" 
-            : "bg-black/30 hover:bg-black/50"
-        )}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-green-600 backdrop-blur-md transition-all text-white border border-white/20 z-10"
         aria-label="Previous slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -202,12 +222,7 @@ const SliderComponent: React.FC<SliderProps> = ({
       
       <button
         onClick={goToNext}
-        className={cn(
-          "absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full backdrop-blur-sm transition-all text-white",
-          isDarkMode 
-            ? "bg-white/10 hover:bg-white/20" 
-            : "bg-black/30 hover:bg-black/50"
-        )}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-green-600 backdrop-blur-md transition-all text-white border border-white/20 z-10"
         aria-label="Next slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -215,21 +230,26 @@ const SliderComponent: React.FC<SliderProps> = ({
         </svg>
       </button>
 
-      {/* Dots navigation */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+      {/* Improved dots navigation */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={cn(
-              "h-2 rounded-full transition-all",
+              "h-2.5 rounded-full transition-all",
               index === currentIndex 
-                ? "bg-alem-500 w-6" 
-                : `${isDarkMode ? "bg-gray-400/50 hover:bg-gray-400/80" : "bg-gray-600/50 hover:bg-gray-600/80"} w-2`
+                ? "bg-green-600 w-8" 
+                : "bg-white/40 hover:bg-white/60 w-2.5"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+      
+      {/* Doctor info badge */}
+      <div className="absolute top-6 left-6 z-10 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+        <p className="text-white font-medium">Dr Nabil Alem | Spécialiste en biologie médicale</p>
       </div>
     </div>
   );

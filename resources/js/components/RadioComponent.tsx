@@ -96,7 +96,7 @@ const RadioComponent: React.FC<RadioProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080"
+                src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Laboratoire de radiobiologie"
                 className="w-full h-full object-cover"
               />
