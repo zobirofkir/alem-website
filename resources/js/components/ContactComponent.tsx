@@ -1,46 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import useContactComponent from '../hooks/useContactComponent';
 
 interface ContactComponentProps {
   theme?: 'light' | 'dark' | 'auto';
 }
 
 const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  
-  useEffect(() => {
-    if (theme !== 'auto') {
-      setIsDarkMode(theme === 'dark');
-      return;
-    }
-    
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(darkModeMediaQuery.matches);
-    
-    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    darkModeMediaQuery.addEventListener('change', handleChange);
-    
-    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  const {
+    formData,
+    isDarkMode,
+    handleChange,
+    handleSubmit,
+  } = useContactComponent({ theme });
 
   const contactInfo = [
     {
@@ -66,6 +39,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
       info: "123 Avenue des Champs-Élysées, Paris"
     }
   ];
+
 
   return (
     <section id="contact" className={cn(
