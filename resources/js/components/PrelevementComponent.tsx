@@ -96,23 +96,35 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
             transition={{ duration: 0.6 }}
             className="text-2xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100"
           >
-            Les avantages du prélèvement à domicile
+            Présentation du service à domicile
           </motion.h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {avantages.map((avantage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
-              >
-                <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">{avantage.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300">{avantage.description}</p>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
+            >
+              <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Villes couvertes</h4>
+              <p className="text-gray-600 dark:text-gray-300">
+                Casablanca, Rabat, Marrakech, Tanger et leurs périphéries. Contactez-nous pour vérifier la disponibilité dans votre zone.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
+            >
+              <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Délai de réponse</h4>
+              <p className="text-gray-600 dark:text-gray-300">
+                Intervention à domicile sous 24h à 48h après votre demande. Service express disponible pour les cas urgents.
+              </p>
+            </motion.div>
           </div>
           
           <motion.div
@@ -120,12 +132,13 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 text-center"
+            className="mt-8 bg-green-50 dark:bg-green-900/20 p-6 rounded-xl"
           >
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+            <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Démarche simple et sécurisée</h4>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Le service de prélèvement à domicile est disponible sur rendez-vous, 
-              du lundi au samedi, de 7h à 12h. Des frais supplémentaires peuvent s'appliquer 
-              selon votre localisation.
+              du lundi au samedi, de 7h à 12h. Nos professionnels respectent strictement 
+              les protocoles sanitaires pour garantir votre sécurité.
             </p>
           </motion.div>
         </div>
