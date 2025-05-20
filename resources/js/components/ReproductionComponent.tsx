@@ -1,30 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { services } from '@/data/ProductionData';
 
 interface ReproductionProps {
   className?: string;
 }
 
 const ReproductionComponent: React.FC<ReproductionProps> = ({ className }) => {
-  const services = [
-    {
-      title: "Diagnostic de l'infertilité",
-      description: "Évaluation complète des facteurs d'infertilité chez l'homme et la femme."
-    },
-    {
-      title: "Analyses hormonales",
-      description: "Mesure précise des niveaux hormonaux pour identifier les déséquilibres."
-    },
-    {
-      title: "Spermogramme",
-      description: "Analyse détaillée de la qualité et de la quantité des spermatozoïdes."
-    },
-    {
-      title: "Suivi de grossesse",
-      description: "Surveillance biologique personnalisée tout au long de la grossesse."
-    }
-  ];
 
   return (
     <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
