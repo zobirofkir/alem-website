@@ -153,7 +153,6 @@ const HeaderComponent = () => {
               } focus:outline-none`}
               aria-expanded="false"
             >
-              <span className="sr-only">Ouvrir le menu principal</span>
               {/* Icône quand le menu est fermé */}
               {!isOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -199,7 +198,7 @@ const HeaderComponent = () => {
               }`}>
                 <span className={`font-bold text-lg ${
                   isDarkMode ? 'text-white' : 'text-gray-800'
-                }`}>Menu</span>
+                }`}>Alem</span>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setIsOpen(false)}
