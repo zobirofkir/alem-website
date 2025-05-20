@@ -1,34 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { specialites } from '@/data/SpecialiteData';
 
 interface SpecialiteProps {
   className?: string;
 }
 
 const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
-  const specialites = [
-    {
-      icon: "🔬",
-      title: "L'innovation au service de la santé",
-      description: "Utilisation des technologies de pointe pour des diagnostics précis et fiables."
-    },
-    {
-      icon: "👶",
-      title: "Biologie de la reproduction - Infertilité",
-      description: "Expertise spécialisée dans le traitement et le diagnostic des problèmes de fertilité."
-    },
-    {
-      icon: "🧪",
-      title: "Analyses médicales rapides & fiables",
-      description: "Résultats précis dans les meilleurs délais pour une prise en charge optimale."
-    },
-    {
-      icon: "🏡",
-      title: "Prélèvement à domicile",
-      description: "Service personnalisé pour votre confort et votre tranquillité d'esprit."
-    }
-  ];
 
   return (
     <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
