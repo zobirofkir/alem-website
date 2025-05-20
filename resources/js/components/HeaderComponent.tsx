@@ -52,12 +52,16 @@ const HeaderComponent = () => {
    */
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Services', href: '/services' },
     { name: 'À propos', href: '/abouts' },
-    { name: 'Portfolio', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Spécialités', href: '/specialites' },
+    { name: 'Reproduction', href: '/biologie-reproduction' },
+    { name: 'Analyses', href: '/analyses' },
+    { name: 'Radio', href: '/radio-biologie' },
+    { name: 'À domicile', href: '/prelevement' },
+    { name: 'Rendez-vous', href: '/rendez-vous' },
+    { name: 'Contact', href: '/contact' },
   ];
-
+  
   /**
    * Variantes d'animation pour le header
    */
