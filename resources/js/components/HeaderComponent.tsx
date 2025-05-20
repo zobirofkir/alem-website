@@ -95,7 +95,7 @@ const HeaderComponent = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Nom Copper au lieu du logo */}
+          {/* Nom Alem au lieu du logo */}
           <motion.div 
             className="flex-shrink-0 flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -103,7 +103,7 @@ const HeaderComponent = () => {
           >
             <a href="/" className="flex items-center">
               <span className={`text-xl font-bold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
-                Copper
+                Alem
               </span>
             </a>
           </motion.div>
