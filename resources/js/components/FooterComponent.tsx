@@ -22,7 +22,7 @@ const FooterComponent = () => {
   return (
     <footer className={`mt-auto py-8 transition-colors duration-300 ${isDarkMode ? 'bg-black text-gray-200' : 'bg-white text-gray-800'}`}>
       {/* Ligne d'accent dorée */}
-      <div className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}></div>
+      <div className={`h-0.5 w-full ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="flex flex-col md:flex-row justify-center items-center">

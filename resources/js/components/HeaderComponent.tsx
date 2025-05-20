@@ -102,7 +102,7 @@ const HeaderComponent = () => {
             whileTap={{ scale: 0.95 }}
           >
             <a href="/" className="flex items-center">
-              <span className={`text-xl font-bold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
+              <span className={`text-xl font-bold ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>
                 Alem
               </span>
             </a>
@@ -118,8 +118,8 @@ const HeaderComponent = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`inline-flex items-center px-1 pt-1 text-sm font-bold border-b-2 transition-colors duration-200 ${
                   isDarkMode 
-                    ? 'border-transparent hover:border-amber-400 hover:text-amber-400' 
-                    : 'border-transparent hover:border-amber-600 hover:text-amber-600'
+                    ? 'border-transparent hover:border-green-400 hover:text-green-400' 
+                    : 'border-transparent hover:border-green-600 hover:text-green-600'
                 }`}
               >
                 {link.name}
@@ -174,8 +174,8 @@ const HeaderComponent = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     isDarkMode 
-                      ? 'text-gray-300 hover:bg-gray-700 hover:text-amber-400' 
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-amber-600'
+                      ? 'text-gray-300 hover:bg-gray-700 hover:text-green-400' 
+                      : 'text-gray-700 hover:bg-gray-100 hover:text-green-600'
                   }`}
                 >
                   {link.name}
@@ -188,7 +188,7 @@ const HeaderComponent = () => {
 
       {/* Ligne d'accent dorée avec animation */}
       <motion.div 
-        className={`h-0.5 w-full ${isDarkMode ? 'bg-amber-400' : 'bg-amber-600'}`}
+        className={`h-0.5 w-full ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}

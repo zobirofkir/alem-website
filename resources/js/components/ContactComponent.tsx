@@ -85,7 +85,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-amber-500 font-medium uppercase tracking-wider"
+            className="text-green-500 font-medium uppercase tracking-wider"
           >
             Restons en Contact
           </motion.span>
@@ -104,7 +104,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="w-20 h-1 bg-amber-500 mx-auto mt-4"
+            className="w-20 h-1 bg-green-500 mx-auto mt-4"
           />
         </motion.div>
 
@@ -126,7 +126,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
-                className="w-12 h-12 mb-4 text-amber-500 flex items-center justify-center rounded-lg bg-amber-500/10 mx-auto"
+                className="w-12 h-12 mb-4 text-green-500 flex items-center justify-center rounded-lg bg-green-500/10 mx-auto"
               >
                 {item.icon}
               </motion.div>
@@ -184,7 +184,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                   value={formData.name}
                   onChange={handleChange}
                   className={cn(
-                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
                     isDarkMode 
                       ? "bg-zinc-800/50 border border-zinc-700 text-white" 
                       : "bg-gray-50 border border-gray-200 text-gray-900"
@@ -209,7 +209,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                   value={formData.email}
                   onChange={handleChange}
                   className={cn(
-                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
                     isDarkMode 
                       ? "bg-zinc-800/50 border border-zinc-700 text-white" 
                       : "bg-gray-50 border border-gray-200 text-gray-900"
@@ -236,7 +236,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                 value={formData.subject}
                 onChange={handleChange}
                 className={cn(
-                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
                   isDarkMode 
                     ? "bg-zinc-800/50 border border-zinc-700 text-white" 
                     : "bg-gray-50 border border-gray-200 text-gray-900"
@@ -262,7 +262,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                 onChange={handleChange}
                 rows={5}
                 className={cn(
-                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
                   isDarkMode 
                     ? "bg-zinc-800/50 border border-zinc-700 text-white" 
                     : "bg-gray-50 border border-gray-200 text-gray-900"
@@ -281,7 +281,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="px-8 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
+                className="px-8 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
                 Envoyer le Message
               </motion.button>

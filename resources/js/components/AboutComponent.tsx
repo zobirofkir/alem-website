@@ -19,9 +19,9 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            À propos de <span className="text-amber-600">Alem</span>
+            À propos de <span className="text-green-600">Alem</span>
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-green-600 mx-auto"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -33,7 +33,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-square overflow-hidden rounded-2xl bg-amber-100 dark:bg-amber-900/20">
+            <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
                 alt="Portfolio Alem"
@@ -44,10 +44,10 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 whileInView={{ width: '0%' }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="absolute inset-0 bg-amber-600 z-10"
+                className="absolute inset-0 bg-green-600 z-10"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-full hidden md:block" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-green-600 rounded-full hidden md:block" />
           </motion.div>
 
           {/* Right column: Content with staggered animations */}
@@ -76,7 +76,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
-                  <span className="text-3xl font-bold text-amber-600">10+</span>
+                  <span className="text-3xl font-bold text-green-600">10+</span>
                   <p className="text-gray-600 dark:text-gray-300">Années d'Expérience</p>
                 </motion.div>
                 <motion.div
@@ -86,7 +86,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
-                  <span className="text-3xl font-bold text-amber-600">200+</span>
+                  <span className="text-3xl font-bold text-green-600">200+</span>
                   <p className="text-gray-600 dark:text-gray-300">Projets Réalisés</p>
                 </motion.div>
               </div>
@@ -95,7 +95,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition-colors"
+                className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
                 Voir le Portfolio
               </motion.button>

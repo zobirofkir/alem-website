@@ -35,7 +35,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ title, category, image, d
         transition={{ duration: 0.3 }}
         className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex flex-col justify-end p-6"
       >
-        <span className="text-amber-500 text-sm font-medium mb-1">{category}</span>
+        <span className="text-green-500 text-sm font-medium mb-1">{category}</span>
         <h3 className="text-white text-xl font-bold">{title}</h3>
       </motion.div>
     </motion.div>
@@ -97,7 +97,7 @@ const PortfolioComponent: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-amber-500 font-medium uppercase tracking-wider"
+            className="text-green-500 font-medium uppercase tracking-wider"
           >
             Nos Travaux Récents
           </motion.span>
@@ -113,7 +113,7 @@ const PortfolioComponent: React.FC = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="w-20 h-1 bg-amber-500 mx-auto mt-4 mb-8"
+            className="w-20 h-1 bg-green-500 mx-auto mt-4 mb-8"
           />
         </motion.div>
 
@@ -129,7 +129,7 @@ const PortfolioComponent: React.FC = () => {
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeFilter === filter 
-                  ? 'bg-amber-500 text-white' 
+                  ? 'bg-green-500 text-white' 
                   : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-300 dark:hover:bg-zinc-700'
               }`}
             >
