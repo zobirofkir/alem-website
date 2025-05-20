@@ -103,7 +103,7 @@ const ContactComponent: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
-                className="text-xl font-semibold text-white mb-2"
+                className="text-xl font-semibold text-zinc-800 dark:text-white mb-2"
               >
                 {item.title}
               </motion.h3>
@@ -112,7 +112,7 @@ const ContactComponent: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.4 }}
-                className="text-zinc-400"
+                className="text-zinc-600 dark:text-zinc-400"
               >
                 {item.info}
               </motion.p>
@@ -124,7 +124,7 @@ const ContactComponent: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="bg-gradient-to-br from-zinc-800/40 to-zinc-900/40 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-zinc-800/50"
+          className="bg-white dark:bg-gradient-to-br dark:from-zinc-800/40 dark:to-zinc-900/40 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-zinc-200/50 dark:border-zinc-800/50"
         >
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -133,7 +133,7 @@ const ContactComponent: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <label htmlFor="name" className="block text-zinc-400 mb-2">Nom</label>
+                <label htmlFor="name" className="block text-zinc-600 dark:text-zinc-400 mb-2">Nom</label>
                 <input
                   type="text"
                   id="name"
@@ -150,7 +150,7 @@ const ContactComponent: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <label htmlFor="email" className="block text-zinc-400 mb-2">Email</label>
+                <label htmlFor="email" className="block text-zinc-600 dark:text-zinc-400 mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
