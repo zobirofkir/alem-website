@@ -16,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, del
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ scale: 1.03 }}
-      className="bg-gradient-to-br from-zinc-800/40 to-zinc-900/40 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-zinc-800/50 h-full"
+      className="bg-white dark:bg-gray-800 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-zinc-200/50 dark:border-zinc-800/50 h-full"
     >
       <motion.div 
         initial={{ scale: 0.8 }}
@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, del
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: delay + 0.3 }}
-        className="text-xl font-semibold text-white mb-2"
+        className="text-zinc-800 dark:text-white text-xl font-semibold mb-2"
       >
         {title}
       </motion.h3>
@@ -40,7 +40,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, del
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: delay + 0.4 }}
-        className="text-zinc-400"
+        className="text-zinc-600 dark:text-zinc-400"
       >
         {description}
       </motion.p>
@@ -95,7 +95,7 @@ const ServiceComponent: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-zinc-950">
+    <section id="services" className="py-20 bg-white dark:bg-zinc-950">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -115,7 +115,7 @@ const ServiceComponent: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mt-2 text-white"
+            className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900 dark:text-white"
           >
             Nos Services
           </motion.h2>
