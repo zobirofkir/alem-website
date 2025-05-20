@@ -1,37 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { avantages, steps } from '@/data/PrelevementData';
 
 interface PrelevementProps {
   className?: string;
 }
 
 const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
-  const avantages = [
-    {
-      title: "Confort et tranquillité",
-      description: "Évitez les déplacements et les salles d'attente, restez dans le confort de votre domicile."
-    },
-    {
-      title: "Flexibilité horaire",
-      description: "Planifiez votre prélèvement à l'heure qui vous convient, y compris tôt le matin."
-    },
-    {
-      title: "Idéal pour les personnes à mobilité réduite",
-      description: "Service adapté aux personnes âgées, handicapées ou ayant des difficultés à se déplacer."
-    },
-    {
-      title: "Même qualité d'analyse",
-      description: "Les échantillons sont traités avec le même niveau d'exigence que ceux prélevés en laboratoire."
-    }
-  ];
-
-  const steps = [
-    "Contactez-nous par téléphone ou en ligne pour prendre rendez-vous",
-    "Préparez-vous selon les instructions spécifiques à votre analyse",
-    "Un professionnel qualifié se rend à votre domicile à l'heure convenue",
-    "Recevez vos résultats par email ou consultez-les en ligne"
-  ];
 
   return (
     <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
