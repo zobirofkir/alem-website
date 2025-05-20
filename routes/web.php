@@ -37,3 +37,10 @@ Route::get('/analyses', function() {
     return inertia('AnalysePage');
 })->name('analyses');
  
+
+/**
+ * Radio Route
+ */
+Route::get('/radios', function() {
+    return inertia('RadioPage');
+})->name('radios');
