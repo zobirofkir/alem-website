@@ -12,6 +12,7 @@ const RendezVousComponent: React.FC<RendezVousProps> = ({ className }) => {
     prenom: '',
     telephone: '',
     adresse: '',
+    email: '',
     typeAnalyse: '',
     date: '',
     heure: '',
@@ -186,6 +187,21 @@ const RendezVousComponent: React.FC<RendezVousProps> = ({ className }) => {
                     id="adresse"
                     name="adresse"
                     value={formData.adresse}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:text-white"
+                    required
+                  />
+                </div>
+                
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:text-white"
                     required
