@@ -1,9 +1,7 @@
 import AboutComponent from '@/components/AboutComponent';
 import ContactComponent from '@/components/ContactComponent';
 import PortfolioComponent from '@/components/PortfolioComponent';
-import ServiceComponent from '@/components/ServiceComponent';
 import SliderComponent from '@/components/SliderComponent'
-import React from 'react'
 
 const WelcomePage = () => {
   
@@ -36,8 +34,6 @@ const WelcomePage = () => {
         <SliderComponent slides={slides} />
 
         <AboutComponent  />
-
-        <ServiceComponent />
 
         <PortfolioComponent />
 
