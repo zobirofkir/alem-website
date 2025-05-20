@@ -169,7 +169,7 @@ const ContactComponent: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mb-6"
             >
-              <label htmlFor="subject" className="block text-zinc-400 mb-2">Sujet</label>
+              <label htmlFor="subject" className="block text-zinc-600 dark:text-zinc-400 mb-2">Sujet</label>
               <input
                 type="text"
                 id="subject"
@@ -187,7 +187,7 @@ const ContactComponent: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mb-6"
             >
-              <label htmlFor="message" className="block text-zinc-400 mb-2">Message</label>
+              <label htmlFor="message" className="block text-zinc-600 dark:text-zinc-400 mb-2">Message</label>
               <textarea
                 id="message"
                 name="message"
