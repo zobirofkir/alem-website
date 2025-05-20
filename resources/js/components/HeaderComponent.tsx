@@ -49,13 +49,15 @@ const HeaderComponent = () => {
    */
   const navLinks = [
     { name: 'Accueil', href: '#' },
-    { name: 'Services', href: '#' },
+    { name: 'Services', href: '/services' },
     { name: 'À propos', href: '#' },
     { name: 'Portfolio', href: '#' },
     { name: 'Contact', href: '#' },
   ];
 
-  // Variantes d'animation pour le header
+  /**
+   * Variantes d'animation pour le header
+   */
   const headerVariants = {
     visible: { 
       y: 0,
@@ -92,7 +94,7 @@ const HeaderComponent = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a href="#" className="flex items-center">
+            <a href="/" className="flex items-center">
               <span className={`text-xl font-bold ${isDarkMode ? 'text-amber-400' : 'text-amber-600'}`}>
                 Copper
               </span>
