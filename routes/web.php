@@ -71,4 +71,4 @@ Route::get('/contacts', function() {
 /**
  * Process contact form submission
  */
-Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.submit');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contact.store');
