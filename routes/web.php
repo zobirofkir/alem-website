@@ -44,3 +44,10 @@ Route::get('/analyses', function() {
 Route::get('/radios', function() {
     return inertia('RadioPage');
 })->name('radios');
+
+/**
+ * Prelevement Route
+ */
+Route::get('/prelevements', function() {
+    return inertia('PrelevementPage');
+})->name('prelevements');

@@ -57,7 +57,7 @@ const HeaderComponent = () => {
     { name: 'Reproduction', href: '/reproductions' },
     { name: 'Analyses', href: '/analyses' },
     { name: 'Radio', href: '/radios' },
-    { name: 'À domicile', href: '/prelevement' },
+    { name: 'À domicile', href: '/prelevements' },
     { name: 'Rendez-vous', href: '/rendez-vous' },
     { name: 'Contact', href: '/contact' },
   ];
