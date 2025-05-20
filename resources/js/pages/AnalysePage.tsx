@@ -1,13 +1,13 @@
-import AboutComponent from '@/components/AboutComponent'
+import AnalyseComponent from "@/components/AnalyseComponent"
 
-const AboutPage = () => {
+const AnalysePage = () => {
   return (
     <section className='dark:bg-black bg-white'>
         <div className='flex justify-center items-center'>
-            <AboutComponent />
+            <AnalyseComponent />
         </div>
     </section>
   )
 }
 
-export default AboutPage
+export default AnalysePage

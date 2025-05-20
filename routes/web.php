@@ -29,3 +29,11 @@ Route::get('/specialites', function() {
 Route::get('/reproductions', function() {
     return inertia('ReproductionPage');
 })->name('reproductions');
+
+/**
+ * Analyse Route
+ */
+Route::get('/analyses', function() {
+    return inertia('AnalysePage');
+})->name('analyses');
+ 
