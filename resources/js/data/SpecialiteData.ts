@@ -3,23 +3,18 @@
  */
 export const specialites = [
     {
-      icon: "👨‍👩‍👧",
-      title: "Accompagnement des couples",
-      description: "Suivi hormonal, spermogrammes, bilans pré-conceptionnels"
-    },
-    {
       icon: "👶",
       title: "Biologie de la reproduction - Infertilité",
-      description: "Expertise spécialisée dans le traitement et le diagnostic des problèmes de fertilité."
+      description: "Accompagnement des couples\nSuivi hormonal, spermogrammes, bilans pré-conceptionnels"
     },
     {
       icon: "🧪",
-      title: "Analyses médicales rapides & fiables",
-      description: "Résultats précis dans les meilleurs délais pour une prise en charge optimale."
+      title: "Analyses médicales courantes",
+      description: "Bilan sanguin, analyses urinaires, tests viraux\nRésultats rapides, condentialité garantie"
     },
     {
-      icon: "🏡",
-      title: "Prélèvement à domicile",
-      description: "Service personnalisé pour votre confort et votre tranquillité d'esprit."
+      icon: "☢️",
+      title: "Radio-biologie",
+      description: "Analyses liées à l'exposition aux rayonnements\nSuivi spécique dans certains traitements"
     }
   ];

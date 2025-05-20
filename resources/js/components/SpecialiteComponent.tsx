@@ -95,7 +95,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-20"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {specialites.map((item, index) => (
               <motion.div
                 key={index}
@@ -109,7 +109,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
                   <span className="text-4xl mr-4">{item.icon}</span>
                   <div>
                     <h4 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">{item.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
