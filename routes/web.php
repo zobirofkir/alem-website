@@ -58,3 +58,11 @@ Route::get('/prelevements', function() {
 Route::get('/rendez-vous', function() {
     return inertia('RendezVousPage');
 })->name('rendez-vous');
+
+
+/**
+ * Contact Route
+ */
+Route::get('/contacts', function() {
+    return inertia('ContactPage');
+})->name('contacts');

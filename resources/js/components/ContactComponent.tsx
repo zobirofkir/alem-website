@@ -38,9 +38,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
     console.log('Form submitted:', formData);
-    // Réinitialiser le formulaire après soumission
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -72,7 +70,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
   return (
     <section id="contact" className={cn(
       "py-20 transition-colors",
-      isDarkMode ? "bg-gray-950" : "bg-white"
+      isDarkMode ? "bg-black" : "bg-white"
     )}>
       <div className="container mx-auto px-4">
         <motion.div 

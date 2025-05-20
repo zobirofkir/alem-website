@@ -59,7 +59,7 @@ const HeaderComponent = () => {
     { name: 'Radio', href: '/radios' },
     { name: 'À domicile', href: '/prelevements' },
     { name: 'Rendez-vous', href: '/rendez-vous' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact', href: '/contacts' },
   ];
   
   /**
