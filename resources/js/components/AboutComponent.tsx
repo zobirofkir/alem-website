@@ -59,16 +59,39 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-                Dr Nabil Alem
+                Portrait du Dr. Nabil Alem
               </h3>
               <p className="text-green-600 font-medium mb-4">
                 Spécialiste en biologie médicale et radio-biologie
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Avec une expertise approfondie dans le domaine de la biologie médicale, 
-                Dr Alem offre des services de haute qualité, combinant innovation scientifique 
-                et approche personnalisée pour chaque patient.
-              </p>
+              
+              {/* Diplômes et spécialités */}
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Diplômes & spécialités</h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Docteur en biologie médicale et radio-biologie, avec une expertise particulière 
+                  dans le diagnostic et le suivi des pathologies complexes.
+                </p>
+              </div>
+              
+              {/* Expérience et approche */}
+              <div className="mb-4">
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Expérience et approche patient</h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Avec une expertise approfondie dans le domaine de la biologie médicale, 
+                  Dr Alem offre des services de haute qualité, combinant innovation scientifique 
+                  et approche personnalisée pour chaque patient.
+                </p>
+              </div>
+              
+              {/* Sociétés savantes */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Membre de sociétés savantes</h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Membre actif de plusieurs sociétés scientifiques reconnues dans le domaine 
+                  de la biologie médicale et de la radio-biologie.
+                </p>
+              </div>
 
               {/* Services with icons */}
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -106,7 +129,10 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                Prendre Rendez-vous
+                <a href="/rendez-vous">
+                  Prendre Rendez-vous
+                </a>
+  
               </motion.button>
             </motion.div>
           </div>
