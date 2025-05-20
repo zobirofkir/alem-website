@@ -1,92 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
+import useHeaderComponent from '@/hooks/useHeaderComponent';
+
 
 const HeaderComponent = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  
-  const { scrollY } = useScroll();
-  
-  /**
-   * Gérer l'affichage du header en fonction du défilement
-   */
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (isOpen) return;
-    
-    const direction = latest > lastScrollY ? "down" : "up";
-    
-    const shouldHide = latest > 100 && direction === "down";
-    const shouldShow = direction === "up";
-    
-    /**
-     * Mettre à jour la visibilité
-     */
-    if (shouldHide !== !isVisible) setIsVisible(!shouldHide);
-    
-    /**
-     * Mémoriser la position actuelle pour la prochaine comparaison
-     */
-    setLastScrollY(latest);
-  });
 
-  /**
-   * Vérifier la préférence système pour le mode sombre
-   */
-  useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDarkMode(true);
-    }
+  const {
+    isOpen,
+    isDarkMode,
+    isVisible,
+    navLinks,
+    appointmentLink,
+    headerVariants,
+    setIsOpen,
+    toggleMenu,
+    closeMenu
+  } = useHeaderComponent();
 
-    /**
-     * Écouter les changements de préférence système
-     */
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      setIsDarkMode(e.matches);
-    });
-  }, []);
-
-  /**
-   * Liens de navigation
-   */
-  const navLinks = [
-    { name: 'Accueil', href: '/' },
-    { name: 'À propos', href: '/abouts' },
-    { name: 'Spécialités', href: '/specialites' },
-    { name: 'Reproduction', href: '/reproductions' },
-    { name: 'Analyses', href: '/analyses' },
-    { name: 'Radio', href: '/radios' },
-    { name: 'À domicile', href: '/prelevements' },
-    { name: 'Contact', href: '/contacts' },
-  ];
-  
-  // Lien Rendez-vous séparé pour un style spécial
-  const appointmentLink = { name: 'Rendez-vous', href: '/rendez-vous' };
-  
-  /**
-   * Variantes d'animation pour le header
-   */
-  const headerVariants = {
-    visible: { 
-      y: 0,
-      opacity: 1,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
-        damping: 20 
-      }
-    },
-    hidden: { 
-      y: -100, 
-      opacity: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 100, 
-        damping: 20 
-      }
-    }
-  };
 
   return (
     <motion.header 
