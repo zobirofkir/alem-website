@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 interface ContactFormData {
   name: string;
@@ -11,7 +12,7 @@ interface UseContactComponentProps {
   theme?: 'light' | 'dark' | 'auto';
 }
 
-export const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps = {}) => {
+const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -19,37 +20,78 @@ export const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps
     message: ''
   });
   
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    success: boolean;
+    message: string;
+  } | null>(null);
+
+  // Handle theme changes
   useEffect(() => {
-    if (theme !== 'auto') {
-      setIsDarkMode(theme === 'dark');
-      return;
+    if (theme === 'dark') {
+      setIsDarkMode(true);
+    } else if (theme === 'light') {
+      setIsDarkMode(false);
+    } else {
+      // Auto mode - detect system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDarkMode(prefersDark);
+      
+      // Listen for changes in system preference
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
+      
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
     }
-    
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDarkMode(darkModeMediaQuery.matches);
-    
-    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    darkModeMediaQuery.addEventListener('change', handleChange);
-    
-    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const response = await axios.post('/api/contact', formData);
+      
+      if (response.data.success) {
+        setSubmitStatus({
+          success: true,
+          message: 'Message envoyé avec succès! Nous vous répondrons bientôt.'
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      }
+    } catch (error: any) {
+      setSubmitStatus({
+        success: false,
+        message: error.response?.data?.message || 'Une erreur est survenue. Veuillez réessayer.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return {
     formData,
     isDarkMode,
+    isSubmitting,
+    submitStatus,
     handleChange,
     handleSubmit
   };

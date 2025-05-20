@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /**
@@ -66,3 +67,8 @@ Route::get('/rendez-vous', function() {
 Route::get('/contacts', function() {
     return inertia('ContactPage');
 })->name('contacts');
+
+/**
+ * Process contact form submission
+ */
+Route::post('/contact-submit', [ContactController::class, 'store'])->name('contact.submit');
