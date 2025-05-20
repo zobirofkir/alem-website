@@ -19,7 +19,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            À propos de <span className="text-green-600">Alem</span>
+            À propos de <span className="text-green-600">Dr Alem</span>
           </h2>
           <div className="w-24 h-1 bg-green-600 mx-auto"></div>
         </motion.div>
@@ -35,8 +35,8 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
-                alt="Portfolio Alem"
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080"
+                alt="Dr Nabil Alem"
                 className="w-full h-full object-cover"
               />
               <motion.div
@@ -59,15 +59,18 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
-                Créer l'Excellence Numérique
+                Dr Nabil Alem
               </h3>
+              <p className="text-green-600 font-medium mb-4">
+                Spécialiste en biologie médicale et radio-biologie
+              </p>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Alem est un portfolio créatif présentant des solutions numériques innovantes 
-                et des designs à la pointe de la technologie. Avec un accent sur la qualité et l'attention 
-                aux détails, nous transformons les idées en expériences numériques percutantes.
+                Avec une expertise approfondie dans le domaine de la biologie médicale, 
+                Dr Alem offre des services de haute qualité, combinant innovation scientifique 
+                et approche personnalisée pour chaque patient.
               </p>
 
-              {/* Stats with counter animation */}
+              {/* Services with icons */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -76,8 +79,11 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
-                  <span className="text-3xl font-bold text-green-600">10+</span>
-                  <p className="text-gray-600 dark:text-gray-300">Années d'Expérience</p>
+                  <div className="flex items-center mb-2">
+                    <span className="text-xl mr-2">🔬</span>
+                    <span className="text-gray-800 dark:text-gray-200 font-medium">Innovation</span>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-300">L'innovation au service de la santé</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -86,8 +92,11 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                 >
-                  <span className="text-3xl font-bold text-green-600">200+</span>
-                  <p className="text-gray-600 dark:text-gray-300">Projets Réalisés</p>
+                  <div className="flex items-center mb-2">
+                    <span className="text-xl mr-2">👶</span>
+                    <span className="text-gray-800 dark:text-gray-200 font-medium">Reproduction</span>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-300">Biologie de la reproduction - Infertilité</p>
                 </motion.div>
               </div>
 
@@ -97,7 +106,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                Voir le Portfolio
+                Prendre Rendez-vous
               </motion.button>
             </motion.div>
           </div>
