@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '../lib/utils';
 
 const ContactComponent: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ const ContactComponent: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-zinc-950">
+    <section id="contact" className="py-20 bg-white dark:bg-zinc-950">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -68,7 +69,7 @@ const ContactComponent: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mt-2 text-white"
+            className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900 dark:text-white"
           >
             Contactez-Nous
           </motion.h2>
@@ -87,7 +88,7 @@ const ContactComponent: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-zinc-800/40 to-zinc-900/40 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-zinc-800/50 text-center"
+              className="bg-white dark:bg-gradient-to-br dark:from-zinc-800/40 dark:to-zinc-900/40 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-zinc-200/50 dark:border-zinc-800/50 text-center"
             >
               <motion.div 
                 initial={{ scale: 0.8 }}
