@@ -1,8 +1,12 @@
-import React from 'react'
+import SpecialiteComponent from '@/components/SpecialiteComponent'
 
 const SpecialitePage = () => {
   return (
-    <div>SpecialitePage</div>
+    <section>
+        <div className='flex justify-center items-center'>
+            <SpecialiteComponent />
+        </div>
+    </section>
   )
 }
 

@@ -8,7 +8,6 @@ const AboutPage = () => {
             <AboutComponent />
         </div>
     </section>
-
   )
 }
 
