@@ -10,13 +10,16 @@ const RendezVousComponent: React.FC<RendezVousProps> = ({ className }) => {
   const [formData, setFormData] = useState({
     nom: '',
     prenom: '',
-    email: '',
     telephone: '',
+    adresse: '',
+    typeAnalyse: '',
     date: '',
     heure: '',
     type: 'laboratoire',
     message: ''
   });
+  
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,6 +29,7 @@ const RendezVousComponent: React.FC<RendezVousProps> = ({ className }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    setSubmitted(true);
   };
 
   return (
