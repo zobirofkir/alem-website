@@ -29,7 +29,7 @@ const FooterComponent = () => {
           {/* Logo et copyright */}
           <div className="mb-4 md:mb-0 ">
             <p className="text-sm font-bold">
-              &copy; {new Date().getFullYear()} Copper. Tous droits réservés.
+              &copy; {new Date().getFullYear()} Alem. Tous droits réservés.
             </p>
           </div>          
         </div>

@@ -19,7 +19,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            À propos de <span className="text-amber-600">Copper</span>
+            À propos de <span className="text-amber-600">Alem</span>
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
         </motion.div>
@@ -36,7 +36,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
             <div className="aspect-square overflow-hidden rounded-2xl bg-amber-100 dark:bg-amber-900/20">
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
-                alt="Portfolio Copper"
+                alt="Portfolio Alem"
                 className="w-full h-full object-cover"
               />
               <motion.div
@@ -62,7 +62,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 Créer l'Excellence Numérique
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Copper est un portfolio créatif présentant des solutions numériques innovantes 
+                Alem est un portfolio créatif présentant des solutions numériques innovantes 
                 et des designs à la pointe de la technologie. Avec un accent sur la qualité et l'attention 
                 aux détails, nous transformons les idées en expériences numériques percutantes.
               </p>

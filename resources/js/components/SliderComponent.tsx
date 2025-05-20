@@ -224,7 +224,7 @@ const SliderComponent: React.FC<SliderProps> = ({
             className={cn(
               "h-2 rounded-full transition-all",
               index === currentIndex 
-                ? "bg-copper-500 w-6" 
+                ? "bg-alem-500 w-6" 
                 : `${isDarkMode ? "bg-gray-400/50 hover:bg-gray-400/80" : "bg-gray-600/50 hover:bg-gray-600/80"} w-2`
             )}
             aria-label={`Go to slide ${index + 1}`}
