@@ -5,6 +5,7 @@ import PortfolioComponent from '@/components/PortfolioComponent';
 import SliderComponent from '@/components/SliderComponent';
 import sliderData from '@/data/SliderData';
 import { containerVariants, fadeInUp } from '@/hooks/useWelcomePage';
+import { Head } from '@inertiajs/react';
 
 
 const WelcomePage = () => {
@@ -14,6 +15,7 @@ const WelcomePage = () => {
       initial="hidden"
       animate="visible"
     >
+    <Head title='Accueil'/>
       <motion.div variants={fadeInUp}>
         <SliderComponent slides={sliderData} />
       </motion.div>
