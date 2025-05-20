@@ -84,7 +84,7 @@ const PortfolioComponent: React.FC = () => {
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-zinc-900">
+    <section id="portfolio" className="py-20 bg-white dark:bg-zinc-900">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -104,7 +104,7 @@ const PortfolioComponent: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mt-2 text-white"
+            className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900 dark:text-white"
           >
             Portfolio
           </motion.h2>
@@ -129,7 +129,7 @@ const PortfolioComponent: React.FC = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeFilter === filter 
                   ? 'bg-amber-500 text-white' 
-                  : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                  : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-300 dark:hover:bg-zinc-700'
               }`}
             >
               {filter}
