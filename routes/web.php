@@ -10,13 +10,6 @@ Route::get('/', function () {
 })->name('home');
 
 /**
- * Service Route
- */
-Route::get('/services', function() {
-    return inertia('ServicePage');
-})->name('services');
-
-/**
  * About Route
  */
 Route::get('/abouts', function() {
