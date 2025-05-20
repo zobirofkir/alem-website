@@ -3,9 +3,9 @@
  */
 export const specialites = [
     {
-      icon: "🔬",
-      title: "L'innovation au service de la santé",
-      description: "Utilisation des technologies de pointe pour des diagnostics précis et fiables."
+      icon: "👨‍👩‍👧",
+      title: "Accompagnement des couples",
+      description: "Suivi hormonal, spermogrammes, bilans pré-conceptionnels"
     },
     {
       icon: "👶",

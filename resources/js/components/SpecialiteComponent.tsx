@@ -54,7 +54,9 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                Prendre Rendez-vous
+                <a href="/rendez-vous">
+                  Prendre Rendez-vous
+                </a>
               </motion.button>
             </div>
           </motion.div>
@@ -114,27 +116,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
             ))}
           </div>
         </motion.div>
-        
-        {/* Bottom call to action */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            Notre laboratoire s'engage à fournir des analyses médicales de la plus haute qualité, 
-            avec une attention particulière portée au confort et à la satisfaction de nos patients.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
-          >
-            Découvrir nos services
-          </motion.button>
-        </motion.div>
+
       </div>
     </section>
   );
