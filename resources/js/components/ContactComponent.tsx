@@ -183,7 +183,12 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className={cn(
+                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                    isDarkMode 
+                      ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                      : "bg-gray-50 border border-gray-200 text-gray-900"
+                  )}
                   required
                 />
               </motion.div>
@@ -193,14 +198,22 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <label htmlFor="email" className="block text-zinc-600 dark:text-zinc-400 mb-2">Email</label>
+                <label htmlFor="email" className={cn(
+                  "block mb-2",
+                  isDarkMode ? "text-zinc-400" : "text-zinc-600"
+                )}>Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className={cn(
+                    "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                    isDarkMode 
+                      ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                      : "bg-gray-50 border border-gray-200 text-gray-900"
+                  )}
                   required
                 />
               </motion.div>
@@ -212,14 +225,22 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mb-6"
             >
-              <label htmlFor="subject" className="block text-zinc-600 dark:text-zinc-400 mb-2">Sujet</label>
+              <label htmlFor="subject" className={cn(
+                "block mb-2",
+                isDarkMode ? "text-zinc-400" : "text-zinc-600"
+              )}>Sujet</label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className={cn(
+                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                  isDarkMode 
+                    ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                    : "bg-gray-50 border border-gray-200 text-gray-900"
+                )}
                 required
               />
             </motion.div>
@@ -230,14 +251,22 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mb-6"
             >
-              <label htmlFor="message" className="block text-zinc-600 dark:text-zinc-400 mb-2">Message</label>
+              <label htmlFor="message" className={cn(
+                "block mb-2",
+                isDarkMode ? "text-zinc-400" : "text-zinc-600"
+              )}>Message</label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className={cn(
+                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500",
+                  isDarkMode 
+                    ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                    : "bg-gray-50 border border-gray-200 text-gray-900"
+                )}
                 required
               />
             </motion.div>
