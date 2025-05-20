@@ -51,3 +51,10 @@ Route::get('/radios', function() {
 Route::get('/prelevements', function() {
     return inertia('PrelevementPage');
 })->name('prelevements');
+
+/**
+ * Rendez-vous Route
+ */
+Route::get('/rendez-vous', function() {
+    return inertia('RendezVousPage');
+})->name('rendez-vous');
