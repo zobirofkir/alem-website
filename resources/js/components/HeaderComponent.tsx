@@ -9,22 +9,25 @@ const HeaderComponent = () => {
   
   const { scrollY } = useScroll();
   
-  // Gérer l'affichage du header en fonction du défilement
+  /**
+   * Gérer l'affichage du header en fonction du défilement
+   */
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Ne pas cacher le header si le menu mobile est ouvert
     if (isOpen) return;
     
-    // Déterminer si on défile vers le haut ou vers le bas
     const direction = latest > lastScrollY ? "down" : "up";
     
-    // Seuil minimum de défilement avant de cacher le header (20px)
     const shouldHide = latest > 100 && direction === "down";
     const shouldShow = direction === "up";
     
-    // Mettre à jour la visibilité
+    /**
+     * Mettre à jour la visibilité
+     */
     if (shouldHide !== !isVisible) setIsVisible(!shouldHide);
     
-    // Mémoriser la position actuelle pour la prochaine comparaison
+    /**
+     * Mémoriser la position actuelle pour la prochaine comparaison
+     */
     setLastScrollY(latest);
   });
 
@@ -48,9 +51,9 @@ const HeaderComponent = () => {
    * Liens de navigation
    */
   const navLinks = [
-    { name: 'Accueil', href: '#' },
+    { name: 'Accueil', href: '/' },
     { name: 'Services', href: '/services' },
-    { name: 'À propos', href: '#' },
+    { name: 'À propos', href: '/abouts' },
     { name: 'Portfolio', href: '#' },
     { name: 'Contact', href: '#' },
   ];
