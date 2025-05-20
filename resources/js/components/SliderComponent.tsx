@@ -162,7 +162,12 @@ const SliderComponent: React.FC<SliderProps> = ({
               />
               
               {/* Content overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent dark:from-black/80" />
+              <div className={cn(
+                "absolute inset-0 bg-gradient-to-t to-transparent",
+                isDarkMode 
+                  ? "from-black/80" 
+                  : "from-black/60"
+              )} />
               
               {/* Text content */}
               <motion.div 
@@ -171,8 +176,8 @@ const SliderComponent: React.FC<SliderProps> = ({
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <h2 className="text-2xl md:text-4xl font-bold mb-2">{slides[currentIndex].title}</h2>
-                <p className="text-sm md:text-base opacity-90 max-w-2xl">{slides[currentIndex].description}</p>
+                <h2 className="text-2xl md:text-4xl font-bold mb-2 text-white">{slides[currentIndex].title}</h2>
+                <p className="text-sm md:text-base opacity-90 max-w-2xl text-gray-100">{slides[currentIndex].description}</p>
               </motion.div>
             </div>
           </motion.div>
@@ -182,7 +187,12 @@ const SliderComponent: React.FC<SliderProps> = ({
       {/* Navigation arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 dark:bg-white/10 hover:bg-black/50 dark:hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-sm transition-all"
+        className={cn(
+          "absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full backdrop-blur-sm transition-all text-white",
+          isDarkMode 
+            ? "bg-white/10 hover:bg-white/20" 
+            : "bg-black/30 hover:bg-black/50"
+        )}
         aria-label="Previous slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -192,7 +202,12 @@ const SliderComponent: React.FC<SliderProps> = ({
       
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 dark:bg-white/10 hover:bg-black/50 dark:hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-sm transition-all"
+        className={cn(
+          "absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full backdrop-blur-sm transition-all text-white",
+          isDarkMode 
+            ? "bg-white/10 hover:bg-white/20" 
+            : "bg-black/30 hover:bg-black/50"
+        )}
         aria-label="Next slide"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -207,10 +222,10 @@ const SliderComponent: React.FC<SliderProps> = ({
             key={index}
             onClick={() => goToSlide(index)}
             className={cn(
-              "w-2 h-2 rounded-full transition-all",
+              "h-2 rounded-full transition-all",
               index === currentIndex 
-                ? "bg-white w-6" 
-                : "bg-white/50 hover:bg-white/80"
+                ? "bg-copper-500 w-6" 
+                : `${isDarkMode ? "bg-gray-400/50 hover:bg-gray-400/80" : "bg-gray-600/50 hover:bg-gray-600/80"} w-2`
             )}
             aria-label={`Go to slide ${index + 1}`}
           />
