@@ -27,7 +27,9 @@ const SliderComponent: React.FC<SliderProps> = ({
   const [isPaused, setIsPaused] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   
-  // Detect system color scheme preference
+  /**
+   * Detect system color scheme preference
+   */
   useEffect(() => {
     if (theme !== 'auto') {
       setIsDarkMode(theme === 'dark');
@@ -43,7 +45,9 @@ const SliderComponent: React.FC<SliderProps> = ({
     return () => darkModeMediaQuery.removeEventListener('change', handleChange);
   }, [theme]);
 
-  // Auto-play functionality with useCallback for better performance
+  /**
+   * Auto-play functionality with useCallback for better performance
+   */
   const nextSlide = useCallback(() => {
     setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
@@ -71,7 +75,9 @@ const SliderComponent: React.FC<SliderProps> = ({
     setCurrentIndex(index);
   };
 
-  // Enhanced animation variants
+  /**
+   * Enhanced animation variants
+   */
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
@@ -90,7 +96,9 @@ const SliderComponent: React.FC<SliderProps> = ({
     }),
   };
 
-  // Touch handling for mobile swipe
+  /**
+   * Touch handling for mobile swipe
+   */
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
@@ -104,12 +112,17 @@ const SliderComponent: React.FC<SliderProps> = ({
 
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 50) {
-      // Swipe left
+      
+      /**
+       * Swipe left
+       */
       goToNext();
     }
 
     if (touchStart - touchEnd < -50) {
-      // Swipe right
+      /**
+       * Swipe right
+       */
       goToPrevious();
     }
   };
@@ -121,7 +134,7 @@ const SliderComponent: React.FC<SliderProps> = ({
   return (
     <div 
       className={cn(
-        "relative w-full overflow-hidden rounded-xl shadow-xl transition-colors", 
+        "relative w-full h-screen overflow-hidden rounded-xl shadow-xl transition-colors", 
         isDarkMode ? "bg-gray-900" : "bg-white",
         className
       )}
@@ -143,7 +156,7 @@ const SliderComponent: React.FC<SliderProps> = ({
       </div>
 
       {/* Main slider */}
-      <div className="relative h-[70vh] md:h-[80vh] w-full">
+      <div className="relative h-screen w-full">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
