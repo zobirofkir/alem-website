@@ -1,5 +1,4 @@
 import RendezVousComponent from '@/components/RendezVousComponent'
-import React from 'react'
 
 const RendezVousPage = () => {
   return (
