@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 
-const ContactComponent: React.FC = () => {
+interface ContactComponentProps {
+  theme?: 'light' | 'dark' | 'auto';
+}
+
+const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  useEffect(() => {
+    if (theme !== 'auto') {
+      setIsDarkMode(theme === 'dark');
+      return;
+    }
+    
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(darkModeMediaQuery.matches);
+    
+    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
+    darkModeMediaQuery.addEventListener('change', handleChange);
+    
+    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+  }, [theme]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -49,7 +70,10 @@ const ContactComponent: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-zinc-950">
+    <section id="contact" className={cn(
+      "py-20 transition-colors",
+      isDarkMode ? "bg-gray-950" : "bg-white"
+    )}>
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -69,7 +93,10 @@ const ContactComponent: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900 dark:text-white"
+            className={cn(
+              "text-4xl md:text-5xl font-bold mt-2",
+              isDarkMode ? "text-white" : "text-zinc-900"
+            )}
           >
             Contactez-Nous
           </motion.h2>
@@ -88,7 +115,12 @@ const ContactComponent: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gradient-to-br dark:from-zinc-800/40 dark:to-zinc-900/40 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-zinc-200/50 dark:border-zinc-800/50 text-center"
+              className={cn(
+                "backdrop-blur-sm rounded-xl p-6 shadow-lg text-center",
+                isDarkMode 
+                  ? "bg-gradient-to-br from-zinc-800/40 to-zinc-900/40 border border-zinc-800/50" 
+                  : "bg-white border border-zinc-200/50"
+              )}
             >
               <motion.div 
                 initial={{ scale: 0.8 }}
@@ -103,7 +135,10 @@ const ContactComponent: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
-                className="text-xl font-semibold text-zinc-800 dark:text-white mb-2"
+                className={cn(
+                  "text-xl font-semibold mb-2",
+                  isDarkMode ? "text-white" : "text-zinc-800"
+                )}
               >
                 {item.title}
               </motion.h3>
@@ -112,7 +147,7 @@ const ContactComponent: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.4 }}
-                className="text-zinc-600 dark:text-zinc-400"
+                className={isDarkMode ? "text-zinc-400" : "text-zinc-600"}
               >
                 {item.info}
               </motion.p>
@@ -124,7 +159,12 @@ const ContactComponent: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="bg-white dark:bg-gradient-to-br dark:from-zinc-800/40 dark:to-zinc-900/40 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-zinc-200/50 dark:border-zinc-800/50"
+          className={cn(
+            "backdrop-blur-sm rounded-xl p-8 shadow-lg",
+            isDarkMode 
+              ? "bg-gradient-to-br from-zinc-800/40 to-zinc-900/40 border border-zinc-800/50" 
+              : "bg-white border border-zinc-200/50"
+          )}
         >
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -133,7 +173,10 @@ const ContactComponent: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <label htmlFor="name" className="block text-zinc-600 dark:text-zinc-400 mb-2">Nom</label>
+                <label htmlFor="name" className={cn(
+                  "block mb-2",
+                  isDarkMode ? "text-zinc-400" : "text-zinc-600"
+                )}>Nom</label>
                 <input
                   type="text"
                   id="name"
