@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { router } from '@inertiajs/react';
 
 interface ContactFormData {
   name: string;
@@ -55,36 +55,38 @@ const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps) => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus(null);
     
-    try {
-      const response = await axios.post('/api/contact', formData);
-      
-      if (response.data.success) {
+    router.post('/contacts', formData, {
+      onStart: () => {
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+      },
+      onSuccess: () => {
         setSubmitStatus({
           success: true,
           message: 'Message envoyé avec succès! Nous vous répondrons bientôt.'
         });
         
-        // Reset form
         setFormData({
           name: '',
           email: '',
           subject: '',
           message: ''
         });
+      },
+      onError: (errors) => {
+        setSubmitStatus({
+          success: false,
+          message: 'Une erreur est survenue. Veuillez réessayer.'
+        });
+      },
+      onFinish: () => {
+        setIsSubmitting(false);
       }
-    } catch (error: any) {
-      setSubmitStatus({
-        success: false,
-        message: error.response?.data?.message || 'Une erreur est survenue. Veuillez réessayer.'
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    });
   };
 
   return {
