@@ -12,6 +12,7 @@ interface SliderProps {
   autoPlay?: boolean;
   interval?: number;
   className?: string;
+  theme?: 'light' | 'dark' | 'auto';
 }
 
 const SliderComponent: React.FC<SliderProps> = ({
@@ -19,10 +20,28 @@ const SliderComponent: React.FC<SliderProps> = ({
   autoPlay = true,
   interval = 5000,
   className,
+  theme = 'auto',
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  // Detect system color scheme preference
+  useEffect(() => {
+    if (theme !== 'auto') {
+      setIsDarkMode(theme === 'dark');
+      return;
+    }
+    
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setIsDarkMode(darkModeMediaQuery.matches);
+    
+    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
+    darkModeMediaQuery.addEventListener('change', handleChange);
+    
+    return () => darkModeMediaQuery.removeEventListener('change', handleChange);
+  }, [theme]);
 
   /**
    * Auto-play functionality
@@ -108,7 +127,8 @@ const SliderComponent: React.FC<SliderProps> = ({
   return (
     <div 
       className={cn(
-        "relative w-full overflow-hidden rounded-xl", 
+        "relative w-full overflow-hidden rounded-xl transition-colors", 
+        isDarkMode ? "bg-gray-900" : "bg-white",
         className
       )}
       onMouseEnter={() => setIsPaused(true)}
