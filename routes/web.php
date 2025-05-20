@@ -22,3 +22,10 @@ Route::get('/abouts', function() {
 Route::get('/specialites', function() {
     return inertia('SpecialitePage');
 })->name('specialites');
+
+/**
+ * Reproduction Route
+ */
+Route::get('/reproductions', function() {
+    return inertia('ReproductionPage');
+})->name('reproductions');
