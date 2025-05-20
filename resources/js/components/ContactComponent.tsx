@@ -172,7 +172,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
         >
           <div className="w-full h-96 rounded-lg overflow-hidden">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047744348!2d2.2950976156742854!3d48.8737793792887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4f8140b03%3A0xe5c4beac5a0fd4e4!2sAv.%20des%20Champs-%C3%89lys%C3%A9es%2C%20Paris%2C%20France!5e0!3m2!1sen!2s!4v1652345678901!5m2!1sen!2s" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.1345314624577!2d-5.552137823657623!3d33.860423627833555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda045e9a3fc0dab%3A0xff9369f02f1ae4e5!2sLaboratoire%20d&#39;analyses%20m%C3%A9dicales%20ALEM!5e0!3m2!1sfr!2sma!4v1747741606594!5m2!1sfr!2sma" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
