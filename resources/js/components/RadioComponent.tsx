@@ -1,30 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { services } from '@/data/RadioData';
 
 interface RadioProps {
   className?: string;
 }
 
 const RadioComponent: React.FC<RadioProps> = ({ className }) => {
-  const services = [
-    {
-      title: "Radiobiologie cellulaire",
-      description: "Étude des effets des rayonnements sur les cellules et les tissus biologiques."
-    },
-    {
-      title: "Dosimétrie biologique",
-      description: "Évaluation précise des doses de rayonnement reçues par les tissus."
-    },
-    {
-      title: "Radioprotection",
-      description: "Mesures et conseils pour la protection contre les rayonnements ionisants."
-    },
-    {
-      title: "Analyses post-exposition",
-      description: "Évaluation des effets biologiques après exposition aux rayonnements."
-    }
-  ];
 
   return (
     <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
