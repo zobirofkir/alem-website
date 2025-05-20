@@ -57,7 +57,6 @@ const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
     router.post('/contacts', formData, {
       onStart: () => {
@@ -80,7 +79,7 @@ const useContactComponent = ({ theme = 'auto' }: UseContactComponentProps) => {
       onError: (errors) => {
         setSubmitStatus({
           success: false,
-          message: 'Une erreur est survenue. Veuillez réessayer.'
+          message: Object.values(errors).join(', ') || 'Une erreur est survenue. Veuillez réessayer.'
         });
       },
       onFinish: () => {

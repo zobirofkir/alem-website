@@ -11,6 +11,8 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
   const {
     formData,
     isDarkMode,
+    isSubmitting,
+    submitStatus,
     handleChange,
     handleSubmit,
   } = useContactComponent({ theme });
@@ -196,22 +198,109 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
               : "bg-white border border-zinc-200/50"
           )}
         >
-          <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+          {submitStatus?.success ? (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={cn(
+                "p-8 rounded-xl text-center",
+                isDarkMode ? "bg-green-900/20" : "bg-green-50"
+              )}
+            >
+              <div className={cn(
+                "w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4",
+                isDarkMode ? "bg-green-800" : "bg-green-100"
+              )}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className={cn(
+                "text-xl font-bold mb-2",
+                isDarkMode ? "text-gray-100" : "text-gray-800"
+              )}>Message envoyé avec succès</h3>
+              <p className={cn(
+                "mb-6",
+                isDarkMode ? "text-gray-300" : "text-gray-600"
+              )}>
+                Nous avons bien reçu votre message. Notre équipe vous répondra dans les plus brefs délais.
+              </p>
+              <button 
+                onClick={() => window.location.reload()}
+                className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                <label htmlFor="name" className={cn(
+                Nouveau message
+              </button>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <label htmlFor="name" className={cn(
+                    "block mb-2",
+                    isDarkMode ? "text-zinc-400" : "text-zinc-600"
+                  )}>Nom</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
+                      isDarkMode 
+                        ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                        : "bg-gray-50 border border-gray-200 text-gray-900"
+                    )}
+                    required
+                  />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <label htmlFor="email" className={cn(
+                    "block mb-2",
+                    isDarkMode ? "text-zinc-400" : "text-zinc-600"
+                  )}>Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={cn(
+                      "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
+                      isDarkMode 
+                        ? "bg-zinc-800/50 border border-zinc-700 text-white" 
+                        : "bg-gray-50 border border-gray-200 text-gray-900"
+                    )}
+                    required
+                  />
+                </motion.div>
+              </div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mb-6"
+              >
+                <label htmlFor="subject" className={cn(
                   "block mb-2",
                   isDarkMode ? "text-zinc-400" : "text-zinc-600"
-                )}>Nom</label>
+                )}>Sujet</label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
                   className={cn(
                     "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
@@ -224,20 +313,21 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="mb-6"
               >
-                <label htmlFor="email" className={cn(
+                <label htmlFor="message" className={cn(
                   "block mb-2",
                   isDarkMode ? "text-zinc-400" : "text-zinc-600"
-                )}>Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                )}>Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
+                  rows={5}
                   className={cn(
                     "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
                     isDarkMode 
@@ -247,76 +337,41 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                   required
                 />
               </motion.div>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mb-6"
-            >
-              <label htmlFor="subject" className={cn(
-                "block mb-2",
-                isDarkMode ? "text-zinc-400" : "text-zinc-600"
-              )}>Sujet</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className={cn(
-                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
-                  isDarkMode 
-                    ? "bg-zinc-800/50 border border-zinc-700 text-white" 
-                    : "bg-gray-50 border border-gray-200 text-gray-900"
-                )}
-                required
-              />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mb-6"
-            >
-              <label htmlFor="message" className={cn(
-                "block mb-2",
-                isDarkMode ? "text-zinc-400" : "text-zinc-600"
-              )}>Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                className={cn(
-                  "w-full rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500",
-                  isDarkMode 
-                    ? "bg-zinc-800/50 border border-zinc-700 text-white" 
-                    : "bg-gray-50 border border-gray-200 text-gray-900"
-                )}
-                required
-              />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-center"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                className="px-8 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+              
+              {submitStatus?.success === false && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className={cn(
+                    "p-4 rounded-lg mb-6 text-center",
+                    isDarkMode ? "bg-red-900/20 text-red-200" : "bg-red-50 text-red-600"
+                  )}
+                >
+                  {submitStatus.message}
+                </motion.div>
+              )}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-center"
               >
-                Envoyer le Message
-              </motion.button>
-            </motion.div>
-          </form>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={cn(
+                    "px-8 py-3 bg-green-600 text-white rounded-lg font-medium transition-colors",
+                    isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:bg-green-700"
+                  )}
+                >
+                  {isSubmitting ? "Envoi en cours..." : "Envoyer le Message"}
+                </motion.button>
+              </motion.div>
+            </form>
+          )}
         </motion.div>
       </div>
     </section>
