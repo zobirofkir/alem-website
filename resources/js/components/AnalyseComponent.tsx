@@ -1,30 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { analyses } from '@/data/AnalyseData';
 
 interface AnalyseProps {
   className?: string;
 }
 
 const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
-  const analyses = [
-    {
-      category: "Analyses sanguines",
-      tests: ["Hémogramme complet", "Bilan lipidique", "Glycémie", "Fonction hépatique"]
-    },
-    {
-      category: "Analyses urinaires",
-      tests: ["Analyse cytobactériologique", "Recherche de protéines", "Dosage hormonal"]
-    },
-    {
-      category: "Analyses microbiologiques",
-      tests: ["Cultures bactériennes", "Antibiogrammes", "Recherche de parasites"]
-    },
-    {
-      category: "Analyses spécialisées",
-      tests: ["Marqueurs tumoraux", "Tests génétiques", "Dosages hormonaux spécifiques"]
-    }
-  ];
 
   return (
     <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
