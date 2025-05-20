@@ -8,3 +8,6 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::get('/services', function() {
+    return inertia('ServicePage');
+})->name('services');
