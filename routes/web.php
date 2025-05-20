@@ -15,3 +15,10 @@ Route::get('/', function () {
 Route::get('/abouts', function() {
     return inertia('AboutPage');
 })->name('abouts');
+
+/**
+ * Spécialités Route
+ */
+Route::get('/specialites', function() {
+    return inertia('SpecialitePage');
+})->name('specialites');
