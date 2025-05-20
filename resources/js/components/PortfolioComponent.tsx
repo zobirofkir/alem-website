@@ -47,45 +47,45 @@ const PortfolioComponent: React.FC = () => {
   
   const portfolioItems = [
     {
-      title: "Application Mobile Bancaire",
-      category: "Développement Mobile",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470"
+      title: "Biologie de la reproduction",
+      category: "Infertilité",
+      image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1470"
     },
     {
-      title: "Site E-commerce Moderne",
-      category: "Développement Web",
-      image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1528"
+      title: "Analyses médicales rapides",
+      category: "Laboratoire",
+      image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=1470"
     },
     {
-      title: "Interface Utilisateur Dashboard",
-      category: "Design UI/UX",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470"
+      title: "Prélèvement à domicile",
+      category: "Services",
+      image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1472"
     },
     {
-      title: "Campagne Marketing Digital",
-      category: "Marketing Digital",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1415"
+      title: "Équipement de pointe",
+      category: "Technologie",
+      image: "https://images.unsplash.com/photo-1666214277657-e60f05c40b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Identité de Marque Complète",
-      category: "Stratégie de Marque",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1374"
+      title: "Radio-biologie",
+      category: "Spécialité",
+      image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=1470"
     },
     {
-      title: "Infrastructure Cloud Évolutive",
-      category: "Solutions Cloud",
-      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1470"
+      title: "Résultats fiables",
+      category: "Qualité",
+      image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1480"
     }
   ];
   
-  const filters = ['Tous', 'Développement Web', 'Design UI/UX', 'Développement Mobile', 'Marketing Digital', 'Stratégie de Marque', 'Solutions Cloud'];
+  const filters = ['Tous', 'Laboratoire', 'Infertilité', 'Services', 'Technologie', 'Spécialité', 'Qualité'];
   
   const filteredItems = activeFilter === 'Tous' 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-white dark:bg-zinc-900">
+    <section id="portfolio" className="py-20 bg-white dark:bg-zinc-900 bg-opacity-50 bg-[url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1469')] bg-fixed bg-blend-overlay">
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -93,13 +93,21 @@ const PortfolioComponent: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className="text-zinc-600 dark:text-zinc-400 mb-4 max-w-2xl mx-auto"
+          >
+            🔬 L'innovation au service de la santé
+          </motion.p>
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="text-green-500 font-medium uppercase tracking-wider"
           >
-            Nos Travaux Récents
+            Dr Nabil Alem - Spécialiste en biologie médicale et radio-biologie
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0 }}
@@ -107,7 +115,7 @@ const PortfolioComponent: React.FC = () => {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-5xl font-bold mt-2 text-zinc-900 dark:text-white"
           >
-            Portfolio
+            Nos Services
           </motion.h2>
           <motion.div 
             initial={{ scaleX: 0 }}
