@@ -2,7 +2,7 @@ import ReproductionComponent from '@/components/ReproductionComponent'
 
 const ReproductionPage = () => {
   return (
-    <section>
+    <section className='dark:bg-black bg-white'>
         <div className='flex justify-center items-center lg:h-screen'>
             <ReproductionComponent />
         </div>

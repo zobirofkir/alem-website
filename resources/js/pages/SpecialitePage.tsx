@@ -2,7 +2,7 @@ import SpecialiteComponent from '@/components/SpecialiteComponent'
 
 const SpecialitePage = () => {
   return (
-    <section>
+    <section className='dark:bg-black bg-white'>
         <div className='flex justify-center items-center'>
             <SpecialiteComponent />
         </div>
