@@ -18,7 +18,9 @@ class RendezVousController extends Controller
      */
     public function store(RendezVousRequest $request)
     {
-        RendezVous::create($request->validated());
+        $rendezVous = RendezVous::create($request->validated());
+        
+        \Mail::to('zobirofkir19@gmail.com')->send(new \App\Mail\RendezVousMail($rendezVous));
 
         return Redirect::back()->with('success', 'Rendez-vous enregistré avec succès.');
     }
