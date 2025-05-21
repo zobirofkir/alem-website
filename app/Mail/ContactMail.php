@@ -31,7 +31,7 @@ class ContactMail extends Mailable
     {
         return new Envelope(
             subject: $this->contact->subject ?? 'New Contact Message',
-            to: 'zobirofkir19@gmail.com',
+            to: env('MAIL_RECEIVER'),
         );
     }
 

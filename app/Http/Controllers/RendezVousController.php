@@ -22,7 +22,7 @@ class RendezVousController extends Controller
     {
         $rendezVous = RendezVous::create($request->validated());
         
-        Mail::to('zobirofkir19@gmail.com')->send(new RendezVousMail($rendezVous));
+        Mail::to(env('MAIL_RECEIVER'))->send(new RendezVousMail($rendezVous));
 
         return Redirect::back()->with('success', 'Rendez-vous enregistré avec succès.');
     }
