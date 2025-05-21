@@ -47,4 +47,4 @@ createInertiaApp({
 /**
  * This will set light / dark mode on load...
  */
-initializeTheme();
+// Theme initialization is handled by the useSliderComponent hook

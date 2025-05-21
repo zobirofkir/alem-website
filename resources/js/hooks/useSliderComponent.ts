@@ -130,6 +130,8 @@ export const useSliderComponent = ({
     handleMouseLeave,
     currentSlide: slides[currentIndex],
     interval,
+    isPaused,
+    setIsPaused,
   };
 };
 

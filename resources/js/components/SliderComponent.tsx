@@ -39,6 +39,8 @@ const SliderComponent: React.FC<SliderProps> = ({
     handleMouseLeave,
     currentSlide,
     interval: sliderInterval,
+    isPaused,
+    setIsPaused,
   } = useSliderComponent({
     slides,
     autoPlay,
@@ -54,8 +56,8 @@ const SliderComponent: React.FC<SliderProps> = ({
         isDarkMode ? "bg-gray-900" : "bg-white",
         className
       )}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
