@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import { router } from '@inertiajs/react';
 
 interface RendezVousProps {
   className?: string;
@@ -29,8 +30,16 @@ const RendezVousComponent: React.FC<RendezVousProps> = ({ className }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    
+    router.post('/rendez-vous', formData, {
+      onSuccess: () => {
+        setSubmitted(true);
+      },
+      onError: (errors) => {
+        console.error('Error submitting form:', errors);
+        alert('Une erreur est survenue. Veuillez réessayer.');
+      }
+    });
   };
 
   return (
