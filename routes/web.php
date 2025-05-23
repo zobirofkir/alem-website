@@ -12,6 +12,13 @@ Route::get('/', function () {
 })->name('home');
 
 /**
+ * Portfolio Detail Route
+ */
+Route::get('/portfolio/{id}', function($id) {
+    return inertia('PortfolioDetailPage', ['id' => $id]);
+})->name('portfolio.detail');
+
+/**
  * About Route
  */
 Route::get('/abouts', function() {
