@@ -243,7 +243,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
                   <label htmlFor="name" className={cn(
                     "block mb-2",
                     isDarkMode ? "text-zinc-400" : "text-zinc-600"
-                  )}>Nom</label>
+                  )}>Nom et Prénom</label>
                   <input
                     type="text"
                     id="name"
