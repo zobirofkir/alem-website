@@ -58,17 +58,14 @@ const WelcomePage = () => {
       <motion.div variants={fadeInUp}>
         <PrelevementComponent />
       </motion.div>
-
       
-      
-      <motion.div variants={fadeInUp}>
-        <ContactComponent />
-      </motion.div>
-
       <motion.div variants={fadeInUp}>
         <RendezVousComponent />
       </motion.div>
     
+      <motion.div variants={fadeInUp}>
+        <ContactComponent />
+      </motion.div>
       
       
       {/* WhatsApp floating icon */}

@@ -61,7 +61,7 @@ export const useHeaderComponent = () => {
   /**
    * Special appointment link
    */
-  const appointmentLink = { name: 'Rendez-vous', href: '/rendez-vous' };
+  const appointmentLink = { name: 'Rendez-vous', href: '/#rendez-vous' };
   
   /**
    * Animation variants for header
