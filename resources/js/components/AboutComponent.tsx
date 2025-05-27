@@ -8,7 +8,7 @@ interface AboutProps {
 
 const AboutComponent: React.FC<AboutProps> = ({ className }) => {
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='abouts'>
       <div className="max-w-6xl mx-auto">
         {/* Section heading with animation */}
         <motion.div

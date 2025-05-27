@@ -10,7 +10,7 @@ interface ReproductionProps {
 const ReproductionComponent: React.FC<ReproductionProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='reproductions'>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

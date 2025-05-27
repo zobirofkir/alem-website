@@ -7,6 +7,12 @@ import sliderData from '@/data/SliderData';
 import { containerVariants, fadeInUp } from '@/hooks/useWelcomePage';
 import { Head } from '@inertiajs/react';
 import React from 'react';
+import SpecialiteComponent from '@/components/SpecialiteComponent';
+import ReproductionComponent from '@/components/ReproductionComponent';
+import AnalyseComponent from '@/components/AnalyseComponent';
+import RadioComponent from '@/components/RadioComponent';
+import PrelevementComponent from '@/components/PrelevementComponent';
+import RendezVousComponent from '@/components/RendezVousComponent';
 
 
 const WelcomePage = () => {
@@ -30,8 +36,40 @@ const WelcomePage = () => {
       </motion.div>
 
       <motion.div variants={fadeInUp}>
+        <SpecialiteComponent />
+      </motion.div>
+
+      <motion.div variants={fadeInUp}>
         <ContactComponent />
       </motion.div>
+
+      <motion.div variants={fadeInUp}>
+        <ReproductionComponent />
+      </motion.div>
+
+      <motion.div variants={fadeInUp}>
+        <AnalyseComponent />
+      </motion.div>
+
+      <motion.div variants={fadeInUp}>
+        <RadioComponent />
+      </motion.div>
+      
+      <motion.div variants={fadeInUp}>
+        <PrelevementComponent />
+      </motion.div>
+
+      
+      
+      <motion.div variants={fadeInUp}>
+        <ContactComponent />
+      </motion.div>
+
+      <motion.div variants={fadeInUp}>
+        <RendezVousComponent />
+      </motion.div>
+    
+      
       
       {/* WhatsApp floating icon */}
       <a 

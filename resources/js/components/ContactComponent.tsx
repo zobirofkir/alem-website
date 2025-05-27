@@ -59,10 +59,10 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
 
 
   return (
-    <section id="contact" className={cn(
+    <section id="contacts" className={cn(
       "py-20 transition-colors",
       isDarkMode ? "bg-black" : "bg-white"
-    )}>
+    )} >
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
