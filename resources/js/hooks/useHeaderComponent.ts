@@ -49,13 +49,13 @@ export const useHeaderComponent = () => {
   // Navigation links
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'À propos', href: '/abouts' },
-    { name: 'Spécialités', href: '/specialites' },
-    { name: 'Reproduction', href: '/reproductions' },
-    { name: 'Analyses', href: '/analyses' },
-    { name: 'Radio', href: '/radios' },
-    { name: 'À domicile', href: '/prelevements' },
-    { name: 'Contact', href: '/contacts' },
+    { name: 'À propos', href: '#abouts' },
+    { name: 'Spécialités', href: '#specialites' },
+    { name: 'Reproduction', href: '#reproductions' },
+    { name: 'Analyses', href: '#analyses' },
+    { name: 'Radio', href: '#radios' },
+    { name: 'À domicile', href: '#prelevements' },
+    { name: 'Contact', href: '#contacts' },
   ];
   
   /**
