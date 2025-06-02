@@ -21,6 +21,7 @@ const WelcomePage = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      className='overflow-hidden'
     >
       <Head title='Accueil'/>
       <motion.div variants={fadeInUp}>
