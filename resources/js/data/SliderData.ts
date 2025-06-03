@@ -1,10 +1,12 @@
+import sliderOne from '../assets/sliders/slider-one.png';
+
 /**
  * Données du slider pour utilisation dans l'application
  */
 export const sliderData = [
   {
     id: 1, 
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080",
+    image: sliderOne,
     title: "Projet Portfolio Un",
     description: "Solutions innovantes pour des défis modernes"
   },
