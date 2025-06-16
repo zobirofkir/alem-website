@@ -1,7 +1,7 @@
 /**
  * Radio Data
  */
-export const radioServices = [
+export const services = [
   {
     title: "Radiobiologie cellulaire",
     description:
