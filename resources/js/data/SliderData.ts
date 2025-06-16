@@ -10,26 +10,26 @@ export const sliderData = [
   {
     id: 1, 
     image: sliderOne,
-    title: "Projet Portfolio Un",
-    description: "Solutions innovantes pour des défis modernes"
+    title: "Dr Nabil Alem",
+    description: "Spécialiste en biologie médicale & radio-biologie"
   },
   {
     id: 2,
     image: sliderTwo,
-    title: "Projet Portfolio Deux",
-    description: "Designs créatifs avec technologie de pointe"
+    title: "L'innovation en santé",
+    description: "Des technologies avancées au service de votre bien-être"
   },
   {
     id: 3,
     image: sliderThree,
-    title: "Projet Portfolio Trois",
-    description: "Transformer les idées en réalité"
+    title: "Biologie de la reproduction",
+    description: "Accompagnement en fertilité & analyses spécialisées"
   },
   {
     id: 4,
     image: sliderFour,
-    title: "Projet Portfolio 4",
-    description: "Transformer les idées en réalité"
+    title: "Analyses médicales rapides",
+    description: "Résultats fiables avec prélèvement à domicile"
   }
 ];
 
