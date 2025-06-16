@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
+import AboutPost from '../assets/posts/about-us.jpg';
 
 interface AboutProps {
   className?: string;
@@ -41,7 +42,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080"
+                src={AboutPost}
                 alt="Dr Nabil Alem"
                 className="w-full h-full object-cover"
               />

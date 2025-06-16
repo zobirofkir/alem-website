@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { analyses } from '@/data/AnalyseData';
+import AnalyseImage from '../assets/posts/analyse-post.jpg';
 
 interface AnalyseProps {
   className?: string;
@@ -35,7 +36,7 @@ const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://plus.unsplash.com/premium_photo-1663032618920-6cc64f857e65?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={AnalyseImage}
                 alt="Laboratoire d'analyses"
                 className="w-full h-full object-cover"
               />
