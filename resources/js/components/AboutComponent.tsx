@@ -8,9 +8,15 @@ interface AboutProps {
 
 const AboutComponent: React.FC<AboutProps> = ({ className }) => {
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='abouts'>
+    <section
+      className={cn(
+        "py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10",
+        className
+      )}
+      id="abouts"
+    >
       <div className="max-w-6xl mx-auto">
-        {/* Section heading with animation */}
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +31,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left column: Image with animation */}
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +56,7 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-green-600 rounded-full hidden md:block" />
           </motion.div>
 
-          {/* Right column: Content with staggered animations */}
+          {/* Text */}
           <div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -64,36 +70,39 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
               <p className="text-green-600 font-medium mb-4">
                 Spécialiste en biologie médicale et radio-biologie
               </p>
-              
-              {/* Diplômes et spécialités */}
+
               <div className="mb-4">
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Diplômes & spécialités</h4>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
+                  Diplômes & spécialités
+                </h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Docteur en biologie médicale et radio-biologie, avec une expertise particulière 
+                  Docteur en biologie médicale et radio-biologie, avec une expertise particulière
                   dans le diagnostic et le suivi des pathologies complexes.
                 </p>
               </div>
-              
-              {/* Expérience et approche */}
+
               <div className="mb-4">
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Expérience et approche patient</h4>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
+                  Expérience et approche patient
+                </h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Avec une expertise approfondie dans le domaine de la biologie médicale, 
-                  Dr Alem offre des services de haute qualité, combinant innovation scientifique 
+                  Avec une expertise approfondie dans le domaine de la biologie médicale,
+                  Dr Alem offre des services de haute qualité, combinant innovation scientifique
                   et approche personnalisée pour chaque patient.
                 </p>
               </div>
-              
-              {/* Sociétés savantes */}
+
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Membre de sociétés savantes</h4>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
+                  Membre de sociétés savantes
+                </h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Membre actif de plusieurs sociétés scientifiques reconnues dans le domaine 
+                  Membre actif de plusieurs sociétés scientifiques reconnues dans le domaine
                   de la biologie médicale et de la radio-biologie.
                 </p>
               </div>
 
-              {/* Services with icons */}
+              {/* Services */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -106,8 +115,11 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                     <span className="text-xl mr-2">🔬</span>
                     <span className="text-gray-800 dark:text-gray-200 font-medium">Innovation</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300">L'innovation au service de la santé</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    L'innovation au service de la santé
+                  </p>
                 </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -119,20 +131,21 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                     <span className="text-xl mr-2">👶</span>
                     <span className="text-gray-800 dark:text-gray-200 font-medium">Reproduction</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300">Biologie de la reproduction - Infertilité</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Biologie de la reproduction - Infertilité
+                  </p>
                 </motion.div>
               </div>
 
-              {/* CTA Button with hover animation */}
+              {/* Call to action */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                <a href="/rendez-vous">
+                <a href="#contacts">
                   Prendre Rendez-vous
                 </a>
-  
               </motion.button>
             </motion.div>
           </div>
