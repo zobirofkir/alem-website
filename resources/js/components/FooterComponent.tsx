@@ -21,6 +21,7 @@ const FooterComponent = () => {
 
   return (
     <footer className={`mt-auto py-8 transition-colors duration-300 ${isDarkMode ? 'bg-black text-gray-200' : 'bg-white text-gray-800'}`}>
+      
       {/* Ligne d'accent dorée */}
       <div className={`h-0.5 w-full ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`}></div>
       
@@ -28,8 +29,16 @@ const FooterComponent = () => {
         <div className="flex flex-col md:flex-row justify-center items-center">
           {/* Logo et copyright */}
           <div className="mb-4 md:mb-0 ">
-            <p className="text-sm font-bold">
-              &copy; {new Date().getFullYear()} Alem. Tous droits réservés.
+            <p className="text-sm">
+              Created by{' '}
+              <a
+                href="https://nl-digitalagency.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dark:text-white text-black hover:underline"
+              >
+                NL Digital Agency
+              </a>
             </p>
           </div>          
         </div>
