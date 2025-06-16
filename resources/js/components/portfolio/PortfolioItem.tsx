@@ -14,7 +14,7 @@ export const PortfolioItem: React.FC<PortfolioItemProps> = ({ title, category, i
     const [isHovered, setIsHovered] = useState(false);
     
     return (
-      <Link href={`/portfolio/${index}`}>
+      <Link href="#">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

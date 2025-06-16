@@ -41,10 +41,6 @@ const WelcomePage = () => {
       </motion.div>
 
       <motion.div variants={fadeInUp}>
-        <ContactComponent />
-      </motion.div>
-
-      <motion.div variants={fadeInUp}>
         <ReproductionComponent />
       </motion.div>
 
