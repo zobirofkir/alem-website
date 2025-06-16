@@ -19,14 +19,16 @@ const SliderComponent: React.FC<SliderProps> = ({
 }) => {
   const [slidesToUse, setSlidesToUse] = useState(sliderData);
 
-  // Detect screen size and update slides accordingly
+  /**
+   * Detect screen size and update slides accordingly
+   */
   useEffect(() => {
     const handleResize = () => {
       const isMobile = window.innerWidth <= 768;
       setSlidesToUse(isMobile ? sliderMobileData : sliderData);
     };
 
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
