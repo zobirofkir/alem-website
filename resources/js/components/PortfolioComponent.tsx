@@ -7,7 +7,7 @@ import { PortfolioItem } from './portfolio/PortfolioItem';
 const PortfolioComponent: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('Tous');
     
-  const filters = ['Tous', 'Laboratoire', 'Infertilité', 'Services', 'Technologie', 'Spécialité', 'Qualité'];
+  const filters = ['Tous', 'Infertilité', 'Laboratoire', 'Services', 'Spécialité'];
   
   const filteredItems = activeFilter === 'Tous' 
     ? portfolioItems 
