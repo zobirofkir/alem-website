@@ -54,7 +54,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                <a href="/rendez-vous">
+                <a href="#rendez-vous">
                   Prendre Rendez-vous
                 </a>
               </motion.button>

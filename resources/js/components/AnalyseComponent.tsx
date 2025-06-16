@@ -131,13 +131,17 @@ const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
-            >
-              Prendre rendez-vous
-            </motion.button>
+            <a href="#rendez-vous">
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+              >
+                Prendre rendez-vous
+              </motion.button>
+
+            </a>
           </motion.div>
         </motion.div>
       </div>

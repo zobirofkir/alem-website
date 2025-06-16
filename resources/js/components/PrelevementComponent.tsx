@@ -54,13 +54,14 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
               </ol>
             </div>
             
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
             >
               Prendre rendez-vous
-            </motion.button>
+            </motion.button> */}
+            
           </motion.div>
 
           <motion.div
