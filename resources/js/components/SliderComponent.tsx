@@ -52,7 +52,7 @@ const SliderComponent: React.FC<SliderProps> = ({
   return (
     <div 
       className={cn(
-        "relative w-full h-screen overflow-hidden rounded-xl shadow-xl transition-colors", 
+        "relative w-full h-screen overflow-hidden rounded-xl shadow-xl transition-colors mt-17", 
         isDarkMode ? "bg-gray-900" : "bg-white",
         className
       )}
@@ -179,9 +179,9 @@ const SliderComponent: React.FC<SliderProps> = ({
       </div>
       
       {/* Doctor info badge */}
-      <div className="absolute top-20 lg:left-6 left-1 z-10 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+      {/* <div className="absolute top-20 lg:left-6 left-1 z-10 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
         <p className="text-white font-medium">Dr Nabil Alem | Spécialiste en biologie médicale</p>
-      </div>
+      </div> */}
     </div>
   );
 };

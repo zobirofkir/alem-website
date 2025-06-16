@@ -1,4 +1,7 @@
-import sliderOne from '../assets/sliders/slider-one.png';
+import sliderOne from '../assets/sliders/slider-one.jpg';
+import sliderTwo from '../assets/sliders/slider-two.jpg';
+import sliderThree from '../assets/sliders/slider-three.jpg';
+import sliderFour from '../assets/sliders/slider-four.jpg';
 
 /**
  * Données du slider pour utilisation dans l'application
@@ -12,14 +15,20 @@ export const sliderData = [
   },
   {
     id: 2,
-    image: "https://plus.unsplash.com/premium_photo-1663032618920-6cc64f857e65?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: sliderTwo,
     title: "Projet Portfolio Deux",
     description: "Designs créatifs avec technologie de pointe"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: sliderThree,
     title: "Projet Portfolio Trois",
+    description: "Transformer les idées en réalité"
+  },
+  {
+    id: 4,
+    image: sliderFour,
+    title: "Projet Portfolio 4",
     description: "Transformer les idées en réalité"
   }
 ];
