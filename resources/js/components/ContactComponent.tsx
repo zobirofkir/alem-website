@@ -72,7 +72,7 @@ const ContactComponent: React.FC<ContactComponentProps> = ({ theme = 'auto' }) =
         </svg>
       ),
       title: "Instagram",
-      info: "@alem_lab",
+      info: "@laboratoire_alem",
       isSocial: true
     }
   ];
