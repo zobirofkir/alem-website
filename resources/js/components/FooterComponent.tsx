@@ -20,7 +20,7 @@ const FooterComponent = () => {
   }, []);
 
   return (
-    <footer className={`mt-auto py-8 transition-colors duration-300 ${isDarkMode ? 'bg-black text-gray-200' : 'bg-white text-gray-800'}`}>
+    <footer className={`mt-auto md:py-30 py-0 transition-colors duration-300 ${isDarkMode ? 'bg-black text-gray-200' : 'bg-white text-gray-800'}`}>
       
       {/* Ligne d'accent dorée */}
       <div className={`h-0.5 w-full ${isDarkMode ? 'bg-green-400' : 'bg-green-600'}`}></div>
