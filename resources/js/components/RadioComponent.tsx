@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { services } from '@/data/RadioData';
+import RadioImage from '../assets/posts/radio-post.jpg';
 
 interface RadioProps {
   className?: string;
@@ -10,7 +11,7 @@ interface RadioProps {
 const RadioComponent: React.FC<RadioProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='radios'>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,7 +80,7 @@ const RadioComponent: React.FC<RadioProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={RadioImage}
                 alt="Laboratoire de radiobiologie"
                 className="w-full h-full object-cover"
               />

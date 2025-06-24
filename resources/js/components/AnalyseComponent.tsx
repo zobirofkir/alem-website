@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { analyses } from '@/data/AnalyseData';
+import AnalyseImage from '../assets/posts/analyse-post.jpg';
 
 interface AnalyseProps {
   className?: string;
@@ -10,7 +11,7 @@ interface AnalyseProps {
 const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='analyses'>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +36,7 @@ const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://plus.unsplash.com/premium_photo-1663032618920-6cc64f857e65?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={AnalyseImage}
                 alt="Laboratoire d'analyses"
                 className="w-full h-full object-cover"
               />
@@ -131,13 +132,17 @@ const AnalyseComponent: React.FC<AnalyseProps> = ({ className }) => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
-            >
-              Prendre rendez-vous
-            </motion.button>
+            <a href="#rendez-vous">
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+              >
+                Prendre rendez-vous
+              </motion.button>
+
+            </a>
           </motion.div>
         </motion.div>
       </div>

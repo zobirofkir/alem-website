@@ -48,20 +48,20 @@ export const useHeaderComponent = () => {
 
   // Navigation links
   const navLinks = [
-    { name: 'Accueil', href: '/' },
-    { name: 'À propos', href: '/abouts' },
-    { name: 'Spécialités', href: '/specialites' },
-    { name: 'Reproduction', href: '/reproductions' },
-    { name: 'Analyses', href: '/analyses' },
-    { name: 'Radio', href: '/radios' },
-    { name: 'À domicile', href: '/prelevements' },
-    { name: 'Contact', href: '/contacts' },
+    { name: 'Accueil', href: '/#' },
+    { name: 'À propos', href: '/#abouts' },
+    { name: 'Spécialités', href: '/#specialites' },
+    { name: 'Reproduction', href: '/#reproductions' },
+    { name: 'Analyses', href: '/#analyses' },
+    { name: 'Radio', href: '/#radios' },
+    { name: 'À domicile', href: '/#prelevements' },
+    { name: 'Contact', href: '/#contacts' },
   ];
   
   /**
    * Special appointment link
    */
-  const appointmentLink = { name: 'Rendez-vous', href: '/rendez-vous' };
+  const appointmentLink = { name: 'Rendez-vous', href: '/#rendez-vous' };
   
   /**
    * Animation variants for header

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { specialites } from '@/data/SpecialiteData';
+import SpecialityPost from '../assets/posts/speciality-post.jpg';
 
 interface SpecialiteProps {
   className?: string;
@@ -10,7 +11,7 @@ interface SpecialiteProps {
 const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='specialites'>
       <div className="max-w-6xl mx-auto">
         {/* Section heading with animation */}
         <motion.div
@@ -54,7 +55,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
               >
-                <a href="/rendez-vous">
+                <a href="#rendez-vous">
                   Prendre Rendez-vous
                 </a>
               </motion.button>
@@ -71,7 +72,7 @@ const SpecialiteComponent: React.FC<SpecialiteProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1576669801838-1b1c52121e6a?q=80&w=1953&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={SpecialityPost}
                 alt="Laboratoire médical"
                 className="w-full h-full object-cover"
               />

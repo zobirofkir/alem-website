@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { services } from '@/data/ProductionData';
+import ReproductionImage from '../assets/posts/reproduction-post.jpg';
 
 interface ReproductionProps {
   className?: string;
@@ -10,7 +11,7 @@ interface ReproductionProps {
 const ReproductionComponent: React.FC<ReproductionProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='reproductions'>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +62,7 @@ const ReproductionComponent: React.FC<ReproductionProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2070"
+                src={ReproductionImage}
                 alt="Laboratoire de reproduction"
                 className="w-full h-full object-cover"
               />

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { avantages, steps } from '@/data/PrelevementData';
+import PrelevementImage from '../assets/posts/prelevement-post.jpg';
 
 interface PrelevementProps {
   className?: string;
@@ -10,7 +11,7 @@ interface PrelevementProps {
 const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
 
   return (
-    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)}>
+    <section className={cn("py-16 px-4 md:px-8 bg-white dark:bg-black transition-colors mt-10", className)} id='prelevements'>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,13 +55,14 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
               </ol>
             </div>
             
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
             >
               Prendre rendez-vous
-            </motion.button>
+            </motion.button> */}
+            
           </motion.div>
 
           <motion.div
@@ -72,7 +74,7 @@ const PrelevementComponent: React.FC<PrelevementProps> = ({ className }) => {
           >
             <div className="aspect-square overflow-hidden rounded-2xl bg-green-100 dark:bg-green-900/20">
               <img
-                src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={PrelevementImage}
                 alt="Prélèvement à domicile"
                 className="w-full h-full object-cover"
               />
