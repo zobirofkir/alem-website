@@ -103,41 +103,6 @@ const AboutComponent: React.FC<AboutProps> = ({ className }) => {
                 </p>
               </div>
 
-              {/* Services */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
-                >
-                  <div className="flex items-center mb-2">
-                    <span className="text-xl mr-2">🔬</span>
-                    <span className="text-gray-800 dark:text-gray-200 font-medium">Innovation</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    L'innovation au service de la santé
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
-                >
-                  <div className="flex items-center mb-2">
-                    <span className="text-xl mr-2">👶</span>
-                    <span className="text-gray-800 dark:text-gray-200 font-medium">Reproduction</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Biologie de la reproduction - Infertilité
-                  </p>
-                </motion.div>
-              </div>
-
               {/* Call to action */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
