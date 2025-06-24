@@ -1,7 +1,8 @@
 import PortfolioOne from '../assets/portfolios/alem-1.jpg';
 import PortfolioTwo from '../assets/portfolios/alem-2.jpg';
 import PortfolioThree from '../assets/portfolios/alem-3.jpg';
-import PortfolioFour from '../assets/portfolios/alem-4.jpg';
+import PortfolioFour from '../assets/portfolios/alem-1.jpg';
+import PortfolioFive from '../assets/portfolios/alem-3.jpg';
 
 /**
  * Portfolio Data
@@ -34,5 +35,19 @@ export const portfolioItems = [
     image: PortfolioThree,
     description:
       "Spécialiste en radio-biologie, le Dr Nabil Alem assure des études approfondies sur les effets des rayonnements ionisants sur la santé humaine. Cette expertise permet de contribuer à la prévention, au diagnostic et à l’optimisation de traitements radiothérapeutiques."
+  },
+  {
+    title: "Conseil en hygiène hospitalière",
+    category: "Services",
+    image: PortfolioFour,
+    description:
+      "Nous accompagnons les établissements de santé dans la mise en place de protocoles d’hygiène stricts pour prévenir les infections nosocomiales et garantir la sécurité des patients et du personnel."
+  },
+  {
+    title: "Formation en biologie médicale",
+    category: "Laboratoire",
+    image: PortfolioFive,
+    description:
+      "Le Dr Nabil Alem propose des sessions de formation destinées aux professionnels de santé souhaitant approfondir leurs connaissances en biologie médicale et rester à la pointe des avancées scientifiques."
   },
 ];
