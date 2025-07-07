@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 const FooterComponent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -54,12 +54,6 @@ const FooterComponent = () => {
           <div className="flex space-x-4 text-xl">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
               <FaInstagram />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
-              <FaLinkedin />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-500 transition">
-              <FaGithub />
             </a>
           </div>
         </div>
